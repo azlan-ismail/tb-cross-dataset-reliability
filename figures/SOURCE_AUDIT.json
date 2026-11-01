@@ -1,0 +1,58 @@
+{
+  "created_date": "2026-10-25",
+  "plotted_estimates": 42,
+  "intervals": 36,
+  "diagnostic_point_estimates_without_intervals": 6,
+  "new_model_fitting_or_inference": false,
+  "new_statistical_interval_estimation": false,
+  "units": "All saved estimates are proportions. Figure 2 B/C multiply by 100 for percentage axes.",
+  "sources": {
+    "outputs/pulmovision-results-analysis/evidence/results/summary.csv": {
+      "sha256": "5e9595cec09acf0944ba583aa9a18a065f399a528cb0c6d42a932ca20c7c9227",
+      "included_copy": "evidence/01_summary.csv"
+    },
+    "outputs/pulmovision-tbx11k-results/evidence/linear_metrics.json": {
+      "sha256": "9808de2759de3d50fd7a319a69425b029a853be119425acc3b3d4456c36e8ada",
+      "included_copy": "evidence/02_linear_metrics.json"
+    },
+    "outputs/pulmovision-tbx11k-results/evidence/head_seed42_metrics.json": {
+      "sha256": "d1b5c57ef69c8697b56504389181a7f9aa4ae57f9f061071e3095751869e6d51",
+      "included_copy": "evidence/03_head_seed42_metrics.json"
+    },
+    "outputs/pulmovision-tbx11k-results/evidence/head_seed43_metrics.json": {
+      "sha256": "d0de17c79dca415869e38867af863cd61e31d1363ab64befd5fcd0f41a178c29",
+      "included_copy": "evidence/04_head_seed43_metrics.json"
+    },
+    "outputs/pulmovision-tbx11k-results/evidence/head_seed44_metrics.json": {
+      "sha256": "2a9bec8631f59cd9ffac3e767cbe0cb322b8d5626266117eb3c93a492ad76b25",
+      "included_copy": "evidence/05_head_seed44_metrics.json"
+    },
+    "outputs/pulmovision-tbx11k-results/subgroup_specificity.csv": {
+      "sha256": "baad8add408e044bc06c0c63c8c7b8c8fe47b468b30693222761d746c9d55cea",
+      "included_copy": "evidence/06_subgroup_specificity.csv"
+    },
+    "outputs/pulmovision-matched-resolution/evidence/summary.csv": {
+      "sha256": "a9b1b69c0da8d08498456127089dc5297e99104e3d1a2c1f35cb3c8237fa073e",
+      "included_copy": "evidence/07_summary.csv"
+    },
+    "outputs/pulmovision-matched-resolution/evidence/paired_comparisons.csv": {
+      "sha256": "78d911b6cd2c63f666151aed7fa05d4639e34db4f9b45b1a42a7c44ab061a622",
+      "included_copy": "evidence/08_paired_comparisons.csv"
+    },
+    "outputs/pulmovision-matched-resolution/preprocessing_evidence/summary.csv": {
+      "sha256": "1f6df98d7165a153000c4d39d80024e112c59fdc582f599621a831b53e46784a",
+      "included_copy": "evidence/09_summary.csv"
+    },
+    "outputs/pulmovision-matched-resolution/preprocessing_evidence/protocol.json": {
+      "sha256": "433cea7974f390fd2dc07aca732775f2f223338cc1e4e69383e705dd70c9e138",
+      "included_copy": "evidence/10_protocol.json"
+    }
+  },
+  "checks": [
+    "Source thresholds agree across external cohorts.",
+    "Subgroup specificity agrees with saved counts.",
+    "Paired AUROC differences equal matched point-estimate differences.",
+    "All estimates fall within saved confidence intervals.",
+    "24 Figure 2 estimates; 18 Figure 3 estimates; no seed pooling."
+  ]
+}

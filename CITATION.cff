@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Research code and saved evaluation evidence. No DOI has been assigned to this archive."
+title: "Cross-Dataset Reliability of Tuberculosis Classification: Effects of Preprocessing, Threshold Transfer, and Negative-Case Composition"
+type: software
+authors:
+  - family-names: Ismail
+    given-names: Azlan
+    email: azlanismail@uitm.edu.my
+    affiliation: "Universiti Teknologi MARA (UiTM)"
+  - family-names: Hadi
+    given-names: Muhamad Harith
+    email: m.harith.hadi@gmail.com
+    affiliation: "Universiti Teknologi MARA (UiTM)"
+  - family-names: Mutalib
+    given-names: Sofianita
+    affiliation: "Universiti Teknologi MARA (UiTM)"
+  - family-names: Sulaiman
+    given-names: Mohd Suffian
+    affiliation: "Universiti Teknologi MARA (UiTM)"
+  - family-names: AbuKhait
+    given-names: Jafar
+    affiliation: "Tafila Technical University"
+repository-code: "https://github.com/azlan-ismail/tb-cross-dataset-reliability"
+abstract: "Code and available saved evidence for exploratory cross-dataset tuberculosis classification experiments. Includes threshold-transfer, negative-spectrum, matched-resolution and preprocessing analyses."
+keywords:
+  - tuberculosis
+  - chest radiography
+  - external evaluation
+  - reproducibility

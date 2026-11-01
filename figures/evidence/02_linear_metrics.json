@@ -1,0 +1,87 @@
+{
+  "model": "linear",
+  "threshold": 0.5611574877253318,
+  "metrics": {
+    "auroc": 0.9021329987452948,
+    "average_precision": 0.682749725010935,
+    "sensitivity": 0.915,
+    "specificity": 0.64366373902133,
+    "brier": 0.28231712290594857,
+    "tp": 183.0,
+    "fp": 568.0,
+    "tn": 1026.0,
+    "fn": 17.0
+  },
+  "bootstrap_95ci": {
+    "auroc": [
+      0.8760454222286397,
+      0.9258721340011575
+    ],
+    "average_precision": [
+      0.6186629961660324,
+      0.7436246703833879
+    ],
+    "sensitivity": [
+      0.875,
+      0.9519230769230769
+    ],
+    "specificity": [
+      0.619822791534546,
+      0.6675031367628608
+    ],
+    "brier": [
+      0.2641266154695074,
+      0.30074665535909323
+    ]
+  },
+  "valid_bootstrap_samples": 10000,
+  "subgroups": {
+    "health": {
+      "n": 800,
+      "false_positives": 122,
+      "specificity": 0.8475
+    },
+    "sick": {
+      "n": 794,
+      "false_positives": 446,
+      "specificity": 0.4382871536523929
+    },
+    "annotation_1": {
+      "n": 157,
+      "true_positives": 147,
+      "sensitivity": 0.9363057324840764
+    },
+    "annotation_2": {
+      "n": 36,
+      "true_positives": 29,
+      "sensitivity": 0.8055555555555556
+    },
+    "annotation_1;2": {
+      "n": 7,
+      "true_positives": 7,
+      "sensitivity": 1.0
+    }
+  },
+  "fixed_0_5_metrics": {
+    "auroc": 0.9021329987452948,
+    "average_precision": 0.682749725010935,
+    "sensitivity": 0.915,
+    "specificity": 0.6323713927227101,
+    "brier": 0.28231712290594857,
+    "tp": 183.0,
+    "fp": 586.0,
+    "tn": 1008.0,
+    "fn": 17.0
+  },
+  "category_1_secondary": {
+    "auroc": 0.9177556079199437,
+    "average_precision": 0.680100016749677,
+    "sensitivity": 0.9390243902439024,
+    "specificity": 0.64366373902133,
+    "brier": 0.28513252452695115,
+    "tp": 154.0,
+    "fp": 568.0,
+    "tn": 1026.0,
+    "fn": 10.0
+  }
+}

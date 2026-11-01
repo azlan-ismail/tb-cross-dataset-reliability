@@ -1,0 +1,20 @@
+{
+  "code_sha256": "3095940dc97f3a1582c68bbc765a3f42dd3eeab31e6755ffeb6c0285b0c7f455",
+  "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+  "dev": "348bf147ce8c8404afc0fcfd8faf439202f913bd6628e404fee91b9cef04160c",
+  "tbx": "629461acc1b839740264e0ba0a17b7e2baf15201b187a4b2da16a6544d3e6d6c",
+  "conditions": [
+    "hf256_crop224",
+    "hf224_crop224",
+    "tv256_crop224"
+  ],
+  "scope": "Post hoc diagnostic replication, not target optimisation. Same eager float32 model batch4, frozen CLS, train-only scaling balanced logistic C1 seed42; thresholds validation-only.",
+  "environment": {
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "transformers": "4.57.1",
+    "numpy": "2.1.3",
+    "scikit-learn": "1.7.2",
+    "pillow": "11.3.0"
+  }
+}

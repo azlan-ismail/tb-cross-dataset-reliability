@@ -1,0 +1,28 @@
+{
+  "status": "Computational audit and priority visual comparison complete; exploratory evaluation cohort frozen",
+  "n_images": 1794,
+  "groups": {
+    "tb": 200,
+    "health": 800,
+    "sick": 794
+  },
+  "exact_cross_source_matches": 0,
+  "excluded_within_cohort_duplicate_images": 6,
+  "priority_pairs_visually_reviewed": 111,
+  "priority_pairs_identified_as_copies": 0,
+  "lower_priority_similarity_pairs_not_visually_reviewed": 5218,
+  "manifest_sha256": "629461acc1b839740264e0ba0a17b7e2baf15201b187a4b2da16a6544d3e6d6c",
+  "review_sha256": "59cb3fe3d76d7e0b99a06eeca695d0c72e4b119ff84d13bcc2e6e793379b48de",
+  "archive_sha256": "890d309b7ecaead989f527ff6eb756194cd89200cbe71c7287d1895ef0b2beab",
+  "exclusion_rule": "Lexicographically first image_id per exact grayscale-pixel group, irrespective of model outcomes",
+  "model_inference_performed": false,
+  "clinical_review_performed": false,
+  "limitations": [
+    "No guarantee against transformed duplicate leakage",
+    "No confirmed patient identifiers or institution-level independence",
+    "5218 lower-priority similarity pairs not individually adjudicated",
+    "Foundation-model exposure and earlier team use not independently verified",
+    "Within-cohort transformed duplicates not exhaustively audited",
+    "Dataset category 2 is named ObsoletePulmonaryTuberculosis; not a confirmed latent-infection endpoint"
+  ]
+}

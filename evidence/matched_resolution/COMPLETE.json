@@ -1,0 +1,14 @@
+{
+  "code_sha256": "2cb11abff4a80601ef5ed2cf02d780a1639b8f4617c1b2dfbc9834e1e9d93f68",
+  "inference_receipt_sha256": "dbb21bea5d89c52f9ee6801995cd6486d797c0cce6125f8518d7250a5ebb3a98",
+  "bootstrap_repeats": 10000,
+  "seed": 20260925,
+  "files": {
+    "summary.csv": "a9b1b69c0da8d08498456127089dc5297e99104e3d1a2c1f35cb3c8237fa073e",
+    "paired_comparisons.csv": "78d911b6cd2c63f666151aed7fa05d4639e34db4f9b45b1a42a7c44ab061a622",
+    "subgroups.csv": "f4280b99a8bf7ca00e84f3183634b85bf2e168ce88402dab45652ab59aef5814",
+    "Matched_Resolution_Results.md": "e4278adb0c3df0a34379238b3f632afd4e7bdf5777068656d7d8885bfa0ce401",
+    "Matched_Resolution.png": "6e0d40daf9f391dffa0d7976b6052554cf75616bfc622aefad74282c5fb7c6f0",
+    "Matched_Resolution.pdf": "c94f64d097e4860a727c2121f317f8c1e95e71d44e7445365c2b46c6c57a4505"
+  }
+}

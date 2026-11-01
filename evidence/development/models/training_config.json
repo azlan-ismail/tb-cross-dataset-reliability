@@ -1,0 +1,30 @@
+{
+  "manifest_sha256": "348bf147ce8c8404afc0fcfd8faf439202f913bd6628e404fee91b9cef04160c",
+  "feature_fingerprint": "ede329cea95eff7eec099e1a2ef298d166f834685c301a42ed6f9c8cccb09e52",
+  "environment": {
+    "python": "3.13.15",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.1",
+    "numpy": "2.1.3",
+    "scikit-learn": "1.7.2",
+    "pillow": "11.3.0",
+    "huggingface-hub": "0.36.2",
+    "experiment_code_sha256": "e7e1679109e2037bdf8388cb39f57c4c4bd0a2618df9221e026e5554d034b5db",
+    "prepare_code_sha256": "e2ae66a948d3cb19d18b5040275603c87a8462f0c54940176a5d9e03e8c859cc"
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs": 20,
+  "optimizer": "AdamW",
+  "lr": 0.0001,
+  "weight_decay": 0.0001,
+  "batch_size": 8,
+  "selection": "highest validation AUROC; earliest epoch for ties",
+  "threshold": "validation sensitivity >=0.90, maximize specificity",
+  "augmentation": "none; cached deterministic frozen RAD-DINO features",
+  "test_access_during_fit": "feature file integrity checks only; no test metrics or model selection"
+}

@@ -1,0 +1,29 @@
+{
+  "protocol_sha256": "d22cb0a029bd3d58aa0c1e08f830a43b203c8b8c85caa0553771ee21d1685e57",
+  "manifest_sha256": "629461acc1b839740264e0ba0a17b7e2baf15201b187a4b2da16a6544d3e6d6c",
+  "feature_sha256": "1762253b0ef88d3a94b0c4db6d389a40db2e8a99a27de9c81151e3fd84348612",
+  "n": 1794,
+  "models": [
+    "linear",
+    "head_seed42",
+    "head_seed43",
+    "head_seed44"
+  ],
+  "results_sha256": {
+    "predictions.csv": "4d91c1cf5542e255b7e41c7bbe231b3a254fef269d19e648c8b2b40c69944907",
+    "linear_metrics.json": "9808de2759de3d50fd7a319a69425b029a853be119425acc3b3d4456c36e8ada",
+    "head_seed42_metrics.json": "d1b5c57ef69c8697b56504389181a7f9aa4ae57f9f061071e3095751869e6d51",
+    "head_seed43_metrics.json": "d0de17c79dca415869e38867af863cd61e31d1363ab64befd5fcd0f41a178c29",
+    "head_seed44_metrics.json": "2a9bec8631f59cd9ffac3e767cbe0cb322b8d5626266117eb3c93a492ad76b25",
+    "summary.csv": "ecf5d30f9b375bfc90f06ce4156c4864592123e12abb7f3dd848d5249370fc86",
+    "paired_auroc_comparisons.csv": "b9cd7288942acff1890ef51211bcd7ba1ce23dd22a996a31ced42271517b9234"
+  },
+  "limitations": [
+    "No guarantee against transformed duplicate leakage",
+    "No confirmed patient identifiers or institution-level independence",
+    "5218 lower-priority similarity pairs not individually adjudicated",
+    "Foundation-model exposure and earlier team use not independently verified",
+    "Within-cohort transformed duplicates not exhaustively audited",
+    "Dataset category 2 is named ObsoletePulmonaryTuberculosis; not a confirmed latent-infection endpoint"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "pixel_max_abs_hf256_vs_tv256": 4.061624526977539,
+  "features": {
+    "hf256_crop224": {
+      "reference": "original features",
+      "feature_max_abs_difference": 2.9802322387695312e-05,
+      "feature_mean_abs_difference": 1.5478698287552106e-06
+    },
+    "hf224_crop224": {
+      "reference": "matched224 features",
+      "feature_max_abs_difference": 0.6453964710235596,
+      "feature_mean_abs_difference": 0.00359791936352849
+    },
+    "tv256_crop224": {
+      "reference": "HF256 current features",
+      "feature_max_abs_difference": 0.6355204582214355,
+      "feature_mean_abs_difference": 0.006430561188608408
+    }
+  }
+}

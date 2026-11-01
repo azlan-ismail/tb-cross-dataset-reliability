@@ -1,0 +1,35 @@
+{
+  "manifest_sha256": "629461acc1b839740264e0ba0a17b7e2baf15201b187a4b2da16a6544d3e6d6c",
+  "fit_complete_sha256": "9ec95a6b76262f354e02af724cccc214b8b1669410b8dce2a752e6c3f003dde5",
+  "code_sha256": "47faaccc17a645f7f1d3b577324449378ea8db99dc8ca183d5733aaa9555e6b8",
+  "backbone": "microsoft/rad-dino",
+  "revision": "110cbc18d5133582e320b43d53bf5c44e410c936",
+  "thresholds": {
+    "linear": 0.5611574877253318,
+    "head_seed42": 0.7429928779602051,
+    "head_seed43": 0.6160100698471069,
+    "head_seed44": 0.6283349394798279
+  },
+  "bootstrap_repeats": 10000,
+  "bootstrap_seed": 20260924,
+  "environment": {
+    "python": "3.13.15",
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.1",
+    "numpy": "2.1.3",
+    "scikit-learn": "1.7.2",
+    "pillow": "11.3.0"
+  },
+  "scope": "exploratory dataset-label external benchmark; no tuning; no clinical review",
+  "preprocessing": "AutoImageProcessor use_fast=False; EXIF transpose; RGB; no augmentation; float32",
+  "uncertainty": "unique retained image/pixel groups, not verified patients; conditional on fitted models and fixed thresholds",
+  "limitations": [
+    "No guarantee against transformed duplicate leakage",
+    "No confirmed patient identifiers or institution-level independence",
+    "5218 lower-priority similarity pairs not individually adjudicated",
+    "Foundation-model exposure and earlier team use not independently verified",
+    "Within-cohort transformed duplicates not exhaustively audited",
+    "Dataset category 2 is named ObsoletePulmonaryTuberculosis; not a confirmed latent-infection endpoint"
+  ]
+}

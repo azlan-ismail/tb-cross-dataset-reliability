@@ -1,0 +1,9 @@
+numpy>=1.26,<3
+pillow>=10,<13
+scikit-learn>=1.5,<2
+pandas>=2.2,<4
+matplotlib>=3.8,<4
+torch>=2.4,<3
+transformers>=4.46,<5
+huggingface-hub>=0.26,<1
+safetensors>=0.4,<1

@@ -1,0 +1,25 @@
+figure,panel,cohort,model,group,metric,estimate,ci_low,ci_high,ci_method,n,threshold,source_file
+2,A,montgomery,linear,,auroc,0.9558189655172414,0.923351479484292,0.9801613408521302,percentile bootstrap 95%; 2000 resamples,138,0.5611574877253318,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,B,montgomery,linear,,sensitivity,0.8103448275862069,0.7083333333333334,0.9069875107665805,percentile bootstrap 95%; 2000 resamples,138,0.5611574877253318,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,A,montgomery,head_seed42,,auroc,0.9661637931034484,0.937561976101302,0.9867235979393513,percentile bootstrap 95%; 2000 resamples,138,0.7429928779602051,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,B,montgomery,head_seed42,,sensitivity,0.7931034482758621,0.6908777429467085,0.8939393939393939,percentile bootstrap 95%; 2000 resamples,138,0.7429928779602051,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,A,montgomery,head_seed43,,auroc,0.9588362068965517,0.9250848210715993,0.9827822620425228,percentile bootstrap 95%; 2000 resamples,138,0.6160100698471069,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,B,montgomery,head_seed43,,sensitivity,0.8793103448275862,0.7924528301886793,0.9574689716312056,percentile bootstrap 95%; 2000 resamples,138,0.6160100698471069,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,A,montgomery,head_seed44,,auroc,0.9702586206896551,0.9433566974892401,0.9898423403080937,percentile bootstrap 95%; 2000 resamples,138,0.6283349394798279,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,B,montgomery,head_seed44,,sensitivity,0.8620689655172413,0.7678571428571429,0.9454788961038959,percentile bootstrap 95%; 2000 resamples,138,0.6283349394798279,outputs/pulmovision-results-analysis/evidence/results/summary.csv
+2,A,tbx11k,linear,,auroc,0.9021329987452948,0.8760454222286397,0.9258721340011575,percentile bootstrap 95%; 10000 resamples,1794,0.5611574877253318,outputs/pulmovision-tbx11k-results/evidence/linear_metrics.json
+2,B,tbx11k,linear,,sensitivity,0.915,0.875,0.9519230769230769,percentile bootstrap 95%; 10000 resamples,1794,0.5611574877253318,outputs/pulmovision-tbx11k-results/evidence/linear_metrics.json
+2,A,tbx11k,head_seed42,,auroc,0.9283563362609787,0.9038288619131494,0.9497376600657262,percentile bootstrap 95%; 10000 resamples,1794,0.7429928779602051,outputs/pulmovision-tbx11k-results/evidence/head_seed42_metrics.json
+2,B,tbx11k,head_seed42,,sensitivity,0.905,0.861244019138756,0.9444508448540705,percentile bootstrap 95%; 10000 resamples,1794,0.7429928779602051,outputs/pulmovision-tbx11k-results/evidence/head_seed42_metrics.json
+2,A,tbx11k,head_seed43,,auroc,0.930138017565872,0.9058367656081089,0.9514607964335081,percentile bootstrap 95%; 10000 resamples,1794,0.6160100698471069,outputs/pulmovision-tbx11k-results/evidence/head_seed43_metrics.json
+2,B,tbx11k,head_seed43,,sensitivity,0.915,0.8723380822944982,0.9518716577540107,percentile bootstrap 95%; 10000 resamples,1794,0.6160100698471069,outputs/pulmovision-tbx11k-results/evidence/head_seed43_metrics.json
+2,A,tbx11k,head_seed44,,auroc,0.9278074027603513,0.902761616268606,0.9496139446921181,percentile bootstrap 95%; 10000 resamples,1794,0.6283349394798279,outputs/pulmovision-tbx11k-results/evidence/head_seed44_metrics.json
+2,B,tbx11k,head_seed44,,sensitivity,0.915,0.8732377189969083,0.9515436265454028,percentile bootstrap 95%; 10000 resamples,1794,0.6283349394798279,outputs/pulmovision-tbx11k-results/evidence/head_seed44_metrics.json
+2,C,tbx11k,linear,health,specificity,0.8475,0.8209315571663153,0.8707471238707399,Wilson 95%,800,0.5611574877253318,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,linear,sick,specificity,0.43828715365239296,0.4041538543082597,0.4730147248417186,Wilson 95%,794,0.5611574877253318,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,head_seed42,health,specificity,0.92375,0.903266743051205,0.9401831593644846,Wilson 95%,800,0.7429928779602051,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,head_seed42,sick,specificity,0.6423173803526449,0.6083657566120514,0.6748985404502438,Wilson 95%,794,0.7429928779602051,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,head_seed43,health,specificity,0.9075,0.8854292601804332,0.925675955711941,Wilson 95%,800,0.6160100698471069,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,head_seed43,sick,specificity,0.5302267002518891,0.4954498808130105,0.564712447766592,Wilson 95%,794,0.6160100698471069,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,head_seed44,health,specificity,0.895,0.8718365798235254,0.9143881079739907,Wilson 95%,800,0.6283349394798279,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv
+2,C,tbx11k,head_seed44,sick,specificity,0.5214105793450882,0.4866447283496858,0.5559702543941993,Wilson 95%,794,0.6283349394798279,outputs/pulmovision-tbx11k-results/subgroup_specificity.csv

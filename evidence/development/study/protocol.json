@@ -1,0 +1,36 @@
+{
+  "protocol": "PV-classifier-v2-exploratory",
+  "review_complete": true,
+  "review_sha256": "415cd6c1e532d486fe0ab10c71c321b6c69c76d8a4bc0846a20ad31d93659798",
+  "review_scope": "AI contact-sheet review of 35 cross-source candidates; all distinct image content. No clinical or patient-identity adjudication. Other dHash candidates recorded but not visually adjudicated.",
+  "test_source": "montgomery",
+  "split_seed": 42,
+  "model": "microsoft/rad-dino",
+  "revision": "110cbc18d5133582e320b43d53bf5c44e410c936",
+  "manifest_sha256": "348bf147ce8c8404afc0fcfd8faf439202f913bd6628e404fee91b9cef04160c",
+  "counts": {
+    "train": {
+      "0": 262,
+      "1": 267
+    },
+    "validation": {
+      "0": 64,
+      "1": 69
+    },
+    "test": {
+      "0": 80,
+      "1": 58
+    },
+    "excluded_overlap": {
+      "0": 0,
+      "1": 0
+    }
+  },
+  "near_duplicate_policy": "dHash candidates recorded only; exact pixels and same patient grouped. Visual adjudication required before training.",
+  "grouping": "source-qualified filename patient identifier plus exact duplicate components",
+  "limitations": [
+    "No guarantee of detecting all transformed duplicates",
+    "Patient identity inferred from dataset filenames; verify metadata",
+    "Cross-source downstream holdout does not prove absence of foundation-model exposure"
+  ]
+}

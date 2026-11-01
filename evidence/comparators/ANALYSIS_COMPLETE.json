@@ -1,0 +1,32 @@
+{
+  "bootstrap_repeats": 10000,
+  "seed": 20260926,
+  "unit": "unstratified unique images; patient identity unverified",
+  "scope": "exploratory; no multiple-comparison adjustment; comparisons differ in adaptation/preprocessing",
+  "comparisons": [
+    [
+      "dinov2_linear",
+      "rad_linear"
+    ],
+    [
+      "densenet121_seed42",
+      "rad_head_seed42"
+    ],
+    [
+      "densenet121_seed43",
+      "rad_head_seed43"
+    ],
+    [
+      "densenet121_seed44",
+      "rad_head_seed44"
+    ]
+  ],
+  "code_sha256": "ddd51ad716b8b440da3961adb9b7967176872868322a971536e76572ab5ea052",
+  "source_completion_sha256": "d91222a693fb4e9c8caf422ee0ca8050915eeea695095ffdb0aae2ac31ebcfc6",
+  "files": {
+    "summary_with_intervals.csv": "edd6ed0bf94629b692f1810277da35f4c2c7d8d94383042f3be06dcd7bc6d8e1",
+    "paired_comparisons.csv": "e3a6f0de0cd82990883f8976a6e6843566398fd6562ef3f7e146c01963c0efb6",
+    "aligned_predictions.csv": "caeb3a9ce20baf87c04a89814e58a181c02f6fc5f66fff8eba34f1f0c25de656",
+    "case_mix_point_metrics.csv": "08d1a6f925598a0ab38781fd1081f0bb0eff0c6f01713c37c7090bfb92de1fa1"
+  }
+}

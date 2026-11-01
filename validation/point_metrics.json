@@ -1,0 +1,421 @@
+{
+  "status": "passed",
+  "verification_records": 24,
+  "scope": "Saved point estimates only; overlapping records are not independent experiments. No interval or GPU rerun.",
+  "tolerances": {
+    "brier": 1e-07,
+    "other_metrics": 1e-10
+  },
+  "numeric_note": "Brier tolerance accommodates the original float32 neural-score calculation; other metrics use a tighter tolerance.",
+  "maximum_absolute_difference": 5.405614844633533e-10,
+  "records": [
+    {
+      "record": "initial/montgomery/linear",
+      "n": 138,
+      "threshold": 0.5611574877253318,
+      "metrics": {
+        "auroc": 0.9558189655172413,
+        "average_precision": 0.9468578487868388,
+        "sensitivity": 0.8103448275862069,
+        "specificity": 0.9,
+        "brier": 0.09839176192734073,
+        "tp": 47,
+        "fp": 8,
+        "tn": 72,
+        "fn": 11
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "initial/tbx11k/linear",
+      "n": 1794,
+      "threshold": 0.5611574877253318,
+      "metrics": {
+        "auroc": 0.9021329987452948,
+        "average_precision": 0.6827497250109349,
+        "sensitivity": 0.915,
+        "specificity": 0.64366373902133,
+        "brier": 0.28231712290594857,
+        "tp": 183,
+        "fp": 568,
+        "tn": 1026,
+        "fn": 17
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "initial/montgomery/head_seed42",
+      "n": 138,
+      "threshold": 0.7429928779602051,
+      "metrics": {
+        "auroc": 0.9661637931034482,
+        "average_precision": 0.9604650818952635,
+        "sensitivity": 0.7931034482758621,
+        "specificity": 0.95,
+        "brier": 0.0895219632732321,
+        "tp": 46,
+        "fp": 4,
+        "tn": 76,
+        "fn": 12
+      },
+      "maximum_absolute_difference": 4.5747132471074536e-10
+    },
+    {
+      "record": "initial/tbx11k/head_seed42",
+      "n": 1794,
+      "threshold": 0.7429928779602051,
+      "metrics": {
+        "auroc": 0.9283563362609787,
+        "average_precision": 0.7848598311410596,
+        "sensitivity": 0.905,
+        "specificity": 0.7835633626097867,
+        "brier": 0.24397631099266648,
+        "tp": 181,
+        "fp": 345,
+        "tn": 1249,
+        "fn": 19
+      },
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "record": "initial/montgomery/head_seed43",
+      "n": 138,
+      "threshold": 0.6160100698471069,
+      "metrics": {
+        "auroc": 0.9588362068965517,
+        "average_precision": 0.9521234327666597,
+        "sensitivity": 0.8793103448275862,
+        "specificity": 0.875,
+        "brier": 0.0969674595697076,
+        "tp": 51,
+        "fp": 10,
+        "tn": 70,
+        "fn": 7
+      },
+      "maximum_absolute_difference": 7.395130341425471e-11
+    },
+    {
+      "record": "initial/tbx11k/head_seed43",
+      "n": 1794,
+      "threshold": 0.6160100698471069,
+      "metrics": {
+        "auroc": 0.930138017565872,
+        "average_precision": 0.7918145847797236,
+        "sensitivity": 0.915,
+        "specificity": 0.7195734002509411,
+        "brier": 0.23346846918822878,
+        "tp": 183,
+        "fp": 447,
+        "tn": 1147,
+        "fn": 17
+      },
+      "maximum_absolute_difference": 5.551115123125783e-16
+    },
+    {
+      "record": "initial/montgomery/head_seed44",
+      "n": 138,
+      "threshold": 0.6283349394798279,
+      "metrics": {
+        "auroc": 0.9702586206896552,
+        "average_precision": 0.9649393047432063,
+        "sensitivity": 0.8620689655172413,
+        "specificity": 0.9375,
+        "brier": 0.07966177782925338,
+        "tp": 50,
+        "fp": 5,
+        "tn": 75,
+        "fn": 8
+      },
+      "maximum_absolute_difference": 5.405614844633533e-10
+    },
+    {
+      "record": "initial/tbx11k/head_seed44",
+      "n": 1794,
+      "threshold": 0.6283349394798279,
+      "metrics": {
+        "auroc": 0.9278074027603513,
+        "average_precision": 0.7833817476239724,
+        "sensitivity": 0.915,
+        "specificity": 0.7089084065244667,
+        "brier": 0.2363875270327108,
+        "tp": 183,
+        "fp": 464,
+        "tn": 1130,
+        "fn": 17
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "comparison/montgomery/rad_linear",
+      "n": 138,
+      "threshold": 0.5611574877253318,
+      "metrics": {
+        "auroc": 0.9558189655172413,
+        "average_precision": 0.9468578487868388,
+        "sensitivity": 0.8103448275862069,
+        "specificity": 0.9,
+        "brier": 0.09839176192734073,
+        "tp": 47,
+        "fp": 8,
+        "tn": 72,
+        "fn": 11
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "comparison/montgomery/rad_head_seed42",
+      "n": 138,
+      "threshold": 0.7429928779602051,
+      "metrics": {
+        "auroc": 0.9661637931034482,
+        "average_precision": 0.9604650818952635,
+        "sensitivity": 0.7931034482758621,
+        "specificity": 0.95,
+        "brier": 0.0895219632732321,
+        "tp": 46,
+        "fp": 4,
+        "tn": 76,
+        "fn": 12
+      },
+      "maximum_absolute_difference": 0.0
+    },
+    {
+      "record": "comparison/montgomery/rad_head_seed43",
+      "n": 138,
+      "threshold": 0.6160100698471069,
+      "metrics": {
+        "auroc": 0.9588362068965517,
+        "average_precision": 0.9521234327666597,
+        "sensitivity": 0.8793103448275862,
+        "specificity": 0.875,
+        "brier": 0.0969674595697076,
+        "tp": 51,
+        "fp": 10,
+        "tn": 70,
+        "fn": 7
+      },
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "record": "comparison/montgomery/rad_head_seed44",
+      "n": 138,
+      "threshold": 0.6283349394798279,
+      "metrics": {
+        "auroc": 0.9702586206896552,
+        "average_precision": 0.9649393047432063,
+        "sensitivity": 0.8620689655172413,
+        "specificity": 0.9375,
+        "brier": 0.07966177782925338,
+        "tp": 50,
+        "fp": 5,
+        "tn": 75,
+        "fn": 8
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "comparison/montgomery/dinov2_linear",
+      "n": 138,
+      "threshold": 0.1698995380524699,
+      "metrics": {
+        "auroc": 0.7950431034482759,
+        "average_precision": 0.7625301169965032,
+        "sensitivity": 0.46551724137931033,
+        "specificity": 0.9125,
+        "brier": 0.2597102000445273,
+        "tp": 27,
+        "fp": 7,
+        "tn": 73,
+        "fn": 31
+      },
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "record": "comparison/montgomery/densenet121_seed42",
+      "n": 138,
+      "threshold": 0.1460772305727005,
+      "metrics": {
+        "auroc": 0.7991379310344827,
+        "average_precision": 0.8106655503386857,
+        "sensitivity": 0.9137931034482759,
+        "specificity": 0.1375,
+        "brier": 0.23167115630272886,
+        "tp": 53,
+        "fp": 69,
+        "tn": 11,
+        "fn": 5
+      },
+      "maximum_absolute_difference": 0.0
+    },
+    {
+      "record": "comparison/montgomery/densenet121_seed43",
+      "n": 138,
+      "threshold": 0.4284551739692688,
+      "metrics": {
+        "auroc": 0.8084051724137931,
+        "average_precision": 0.8035017084789793,
+        "sensitivity": 0.8103448275862069,
+        "specificity": 0.525,
+        "brier": 0.2104187170271237,
+        "tp": 47,
+        "fp": 38,
+        "tn": 42,
+        "fn": 11
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "comparison/montgomery/densenet121_seed44",
+      "n": 138,
+      "threshold": 0.1808577924966812,
+      "metrics": {
+        "auroc": 0.7709051724137931,
+        "average_precision": 0.7853510069779984,
+        "sensitivity": 0.9137931034482759,
+        "specificity": 0.2375,
+        "brier": 0.30255510069065694,
+        "tp": 53,
+        "fp": 61,
+        "tn": 19,
+        "fn": 5
+      },
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "record": "comparison/tbx11k/rad_linear",
+      "n": 1794,
+      "threshold": 0.5611574877253318,
+      "metrics": {
+        "auroc": 0.9021329987452948,
+        "average_precision": 0.6827497250109349,
+        "sensitivity": 0.915,
+        "specificity": 0.64366373902133,
+        "brier": 0.28231712290594857,
+        "tp": 183,
+        "fp": 568,
+        "tn": 1026,
+        "fn": 17
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "comparison/tbx11k/rad_head_seed42",
+      "n": 1794,
+      "threshold": 0.7429928779602051,
+      "metrics": {
+        "auroc": 0.9283563362609787,
+        "average_precision": 0.7848598311410596,
+        "sensitivity": 0.905,
+        "specificity": 0.7835633626097867,
+        "brier": 0.24397631099266648,
+        "tp": 181,
+        "fp": 345,
+        "tn": 1249,
+        "fn": 19
+      },
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "record": "comparison/tbx11k/rad_head_seed43",
+      "n": 1794,
+      "threshold": 0.6160100698471069,
+      "metrics": {
+        "auroc": 0.930138017565872,
+        "average_precision": 0.7918145847797236,
+        "sensitivity": 0.915,
+        "specificity": 0.7195734002509411,
+        "brier": 0.23346846918822878,
+        "tp": 183,
+        "fp": 447,
+        "tn": 1147,
+        "fn": 17
+      },
+      "maximum_absolute_difference": 5.551115123125783e-16
+    },
+    {
+      "record": "comparison/tbx11k/rad_head_seed44",
+      "n": 1794,
+      "threshold": 0.6283349394798279,
+      "metrics": {
+        "auroc": 0.9278074027603513,
+        "average_precision": 0.7833817476239724,
+        "sensitivity": 0.915,
+        "specificity": 0.7089084065244667,
+        "brier": 0.2363875270327108,
+        "tp": 183,
+        "fp": 464,
+        "tn": 1130,
+        "fn": 17
+      },
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "record": "comparison/tbx11k/dinov2_linear",
+      "n": 1794,
+      "threshold": 0.1698995380524699,
+      "metrics": {
+        "auroc": 0.7094385194479297,
+        "average_precision": 0.2784833152996024,
+        "sensitivity": 0.675,
+        "specificity": 0.6493099121706399,
+        "brier": 0.2297465770718833,
+        "tp": 135,
+        "fp": 559,
+        "tn": 1035,
+        "fn": 65
+      },
+      "maximum_absolute_difference": 1.6653345369377348e-16
+    },
+    {
+      "record": "comparison/tbx11k/densenet121_seed42",
+      "n": 1794,
+      "threshold": 0.1460772305727005,
+      "metrics": {
+        "auroc": 0.8272020075282309,
+        "average_precision": 0.5181396246059251,
+        "sensitivity": 0.91,
+        "specificity": 0.38958594730238394,
+        "brier": 0.20716224733363978,
+        "tp": 182,
+        "fp": 973,
+        "tn": 621,
+        "fn": 18
+      },
+      "maximum_absolute_difference": 3.3306690738754696e-16
+    },
+    {
+      "record": "comparison/tbx11k/densenet121_seed43",
+      "n": 1794,
+      "threshold": 0.4284551739692688,
+      "metrics": {
+        "auroc": 0.8371392722710164,
+        "average_precision": 0.5568771522098925,
+        "sensitivity": 0.81,
+        "specificity": 0.6882057716436637,
+        "brier": 0.2034813092667878,
+        "tp": 162,
+        "fp": 497,
+        "tn": 1097,
+        "fn": 38
+      },
+      "maximum_absolute_difference": 3.3306690738754696e-16
+    },
+    {
+      "record": "comparison/tbx11k/densenet121_seed44",
+      "n": 1794,
+      "threshold": 0.1808577924966812,
+      "metrics": {
+        "auroc": 0.7933563362609787,
+        "average_precision": 0.4084379589784804,
+        "sensitivity": 0.87,
+        "specificity": 0.47867001254705144,
+        "brier": 0.24947403300413726,
+        "tp": 174,
+        "fp": 831,
+        "tn": 763,
+        "fn": 26
+      },
+      "maximum_absolute_difference": 5.551115123125783e-17
+    }
+  ]
+}

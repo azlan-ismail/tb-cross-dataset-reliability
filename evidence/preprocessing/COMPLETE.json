@@ -1,0 +1,20 @@
+{
+  "files": {
+    "protocol.json": "433cea7974f390fd2dc07aca732775f2f223338cc1e4e69383e705dd70c9e138",
+    "audit_dino_preprocessing.py": "3095940dc97f3a1582c68bbc765a3f42dd3eeab31e6755ffeb6c0285b0c7f455",
+    "features.npz": "ad33d29a8593cb81fe7f28dbc0e13729fa2bb87d69d552fdf63c1f017df868fc",
+    "summary.csv": "1f6df98d7165a153000c4d39d80024e112c59fdc582f599621a831b53e46784a",
+    "replication.json": "822cda4a47c0419057179f48e4d2bc08ba2fe6e38ca0ea029c5070eba8aec65c",
+    "Preprocessing_Audit.md": "2aa96ccf5d7af949fdf5358501dbd1c2c9fbfdc6ce3f13c830a268a1e3dd6cc3",
+    "processor/preprocessor_config.json": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828",
+    "models/hf256_crop224.npz": "558c6aff3199fcdc5e4f243ce5b07e51d9e4f8ee07b3f24f910e3f14e5b26261",
+    "models/hf224_crop224.npz": "6443f6daf82f1d6a9ca87f957beb394add6e00b93baa8e4fa3b550698e9f6b36",
+    "models/tv256_crop224.npz": "d4c0a9ab2a22d0131f8bec81a2ce4ec7365bff64316718091046514729ec2cd2",
+    "results/hf256_crop224_predictions.csv": "7cd58cd357f318ed64a3a442059baa3920d017f2330d0a74e9941a0d2563ba26",
+    "results/hf256_crop224_metrics.json": "c58f59505a6cec0c1963c267e4f095e8a708f2d108f6aae88ec610acaeb6679d",
+    "results/hf224_crop224_predictions.csv": "000d5f40d6cf351708eb93b94a997673ed1fb73c6cefbd8539d7913c99b3eafe",
+    "results/hf224_crop224_metrics.json": "ffdbb875a605f1b1a914ff8dc8283442fb1aba534e2470a92016b5f8fb00a9f6",
+    "results/tv256_crop224_predictions.csv": "b4a0dd742ce071fe2c67225b5bed9ec77455cd318a54a072581253defe40743f",
+    "results/tv256_crop224_metrics.json": "b9dbaafad55c4083466ac4a423623a3207c396b451fb4e0a14a265e6bde39721"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "verified_files": [
+    "replication.json",
+    "Preprocessing_Audit.md",
+    "summary.csv",
+    "protocol.json"
+  ],
+  "summary_rows_checked": 6,
+  "manuscript_sha256": "e88585a2ba0eb9171e3cc441d4369c7fdf25fe795f06acc87887e3028d697373",
+  "diagnostic_difference_intervals_computed": false
+}

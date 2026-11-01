@@ -1,0 +1,7 @@
+excluded_image,retained_image,reason
+tbx11k:sick/s2904.png,tbx11k:sick/s1004.png,exact grayscale pixel duplicate; retain lexicographically first image_id
+tbx11k:sick/s4537.png,tbx11k:sick/s2333.png,exact grayscale pixel duplicate; retain lexicographically first image_id
+tbx11k:sick/s3385.png,tbx11k:sick/s2464.png,exact grayscale pixel duplicate; retain lexicographically first image_id
+tbx11k:sick/s3756.png,tbx11k:sick/s2515.png,exact grayscale pixel duplicate; retain lexicographically first image_id
+tbx11k:sick/s3438.png,tbx11k:sick/s3322.png,exact grayscale pixel duplicate; retain lexicographically first image_id
+tbx11k:sick/s4248.png,tbx11k:sick/s3503.png,exact grayscale pixel duplicate; retain lexicographically first image_id

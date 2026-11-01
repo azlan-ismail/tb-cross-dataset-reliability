@@ -1,0 +1,31 @@
+{
+  "archive_sha256": "890d309b7ecaead989f527ff6eb756194cd89200cbe71c7287d1895ef0b2beab",
+  "archive_bytes": 3306757175,
+  "manifest_sha256": "348bf147ce8c8404afc0fcfd8faf439202f913bd6628e404fee91b9cef04160c",
+  "cohort": 1800,
+  "groups": {
+    "tb": 200,
+    "health": 800,
+    "sick": 800
+  },
+  "annotation_category_patterns": {
+    "2": 36,
+    "1": 157,
+    "1;2": 7,
+    "": 1600
+  },
+  "reference_images": 800,
+  "exact_cross_source_matches": 0,
+  "within_cohort_exact_pairs": 6,
+  "similarity_candidates": 5329,
+  "priority_review_pairs": 111,
+  "max_reference_correlation": 0.9607384204864502,
+  "model_inference_performed": false,
+  "decision": "Pending review; not an independence certificate",
+  "limitations": [
+    "Patient identifiers unavailable in released annotation examples",
+    "Similarity screening does not guarantee detection of transformed duplicates",
+    "Foundation-model image overlap not audited",
+    "No human clinical review; dataset-label benchmark only"
+  ]
+}

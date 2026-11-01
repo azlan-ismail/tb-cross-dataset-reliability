@@ -1,0 +1,9 @@
+{
+  "analysis_code_hash": "2cb11abff4a80601ef5ed2cf02d780a1639b8f4617c1b2dfbc9834e1e9d93f68",
+  "verified_report_and_csv_hashes": true,
+  "summary_rows": 8,
+  "paired_rows": 40,
+  "subgroup_rows": 8,
+  "confusion_counts_and_point_differences_checked": true,
+  "bootstrap_independently_rerun": false
+}

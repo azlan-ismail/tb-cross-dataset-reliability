@@ -1,0 +1,6 @@
+{
+  "threshold": 0.6160100698471069,
+  "selected_epoch": 7,
+  "validation_auroc": 0.9827898550724637,
+  "input_dim": 768
+}
