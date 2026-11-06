@@ -4,7 +4,7 @@ Research code and evaluation evidence for exploratory cross-dataset tuberculosis
 
 **Authors:** Azlan Ismail, Muhamad Harith Hadi, Sofianita Mutalib, Mohd Suffian Sulaiman and Jafar AbuKhait. Correspondence: azlanismail@uitm.edu.my. Harith: m.harith.hadi@gmail.com.
 
-This private repository contains experiment code, plotting resources and available saved evaluation evidence. It is not a clinical diagnostic system. The experiments assess agreement with public-dataset labels; clinical validity, patient independence and pretraining independence remain unestablished.
+This repository contains experiment code, plotting resources and available saved evaluation evidence. It is not a clinical diagnostic system. The experiments assess agreement with public-dataset labels; clinical validity, patient independence and pretraining independence remain unestablished.
 
 ## Start here
 
@@ -28,6 +28,19 @@ python scripts/reproduce_point_metrics.py
 
 The first checks packaged file hashes, source syntax and archived execution receipts. The second independently recalculates point estimates from available per-image scores for the initial classifiers and comparators. It does **not** recalculate bootstrap intervals or recover missing per-image outputs for the matched-resolution and preprocessing experiments.
 
+## Revision analyses from saved scores
+
+The threshold-selection uncertainty, local reference threshold, referral-rate and calibration analyses reported in the manuscript are computed only from the saved per-image scores, without a GPU. They need NumPy and Matplotlib:
+
+```sh
+python experiments/revision/analysis.py . OUT          # OUT/tier1_analysis.json (10,000 resamples, seed 20261106)
+python experiments/revision/figs.py . OUT/tier1_analysis.json OUT   # Figures 3-5 and fig3c_subgroups.json
+python experiments/revision/tables.py OUT/tier1_analysis.json OUT/fig3c_subgroups.json .   # LaTeX table rows
+python experiments/revision/fig_design.py OUT          # Figure 1 (study design)
+```
+
+The outputs used in the manuscript are saved in `evidence/revision/`.
+
 ## Repository map
 
 | Folder | Contents |
@@ -37,7 +50,8 @@ The first checks packaged file hashes, source syntax and archived execution rece
 | `experiments/comparators/` | Initial DINOv2/DenseNet121 comparison and case-mix analysis |
 | `experiments/matched_resolution/` | Matched RAD-DINO/DINOv2 conditions and paired analysis |
 | `experiments/preprocessing/` | DINOv2 resize–crop diagnostic |
-| `evidence/` | Available manifests, scores, estimates, logs and completion receipts |
+| `experiments/revision/` | Threshold-uncertainty, calibration and figure scripts run on saved scores |
+| `evidence/` | Available manifests, scores, estimates, logs and completion receipts; `evidence/revision/` holds the revision analysis outputs |
 | `figures/` | Plotting code and saved figure data; no model fitting |
 | `scripts/` | Portable checks for this packaged archive |
 | `docs/` | Reproduction and completeness notes |
@@ -46,4 +60,8 @@ Historical scripts retain their original Colab/Drive paths so that recorded exec
 
 `SOURCE_MAP.csv` records each copied artifact's original project-relative location, original SHA-256, repository SHA-256 and any transformation. Some Windows Python files were normalized to LF; the two development scripts then match the recorded Colab execution hashes. Notebook outputs and execution counts were cleared. Evidence files were copied byte-for-byte. `ARTIFACTS.sha256` covers the packaged source and evidence.
 
-Raw radiographs, dataset ZIPs, trained model binaries and credentials are not included. No blanket open-source licence has been assigned; see [NOTICE.md](NOTICE.md). The related PulmoVision FYP application is a separate project: <https://github.com/HarithHadi/PulmoVision>.
+Raw radiographs, dataset ZIPs, trained model binaries and credentials are not included. The related PulmoVision FYP application is a separate project: <https://github.com/HarithHadi/PulmoVision>.
+
+## Licence and citation
+
+Code is released under the [MIT licence](LICENSE) and derived evaluation records under [CC BY 4.0](LICENSE-DATA.md); see [NOTICE.md](NOTICE.md). Releases are archived on Zenodo. Please cite the archive using [CITATION.cff](CITATION.cff).

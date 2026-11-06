@@ -1,6 +1,6 @@
 # Archive and release status
 
-The repository is private and contains research code and saved evaluation evidence. No release, DOI or blanket software licence has been assigned.
+The repository is public and contains research code and saved evaluation evidence. Code is released under the MIT licence and derived records under CC BY 4.0. Releases are archived on Zenodo, starting with version 1.0.0.
 
 | Component | Available here | Still required for a complete execution archive |
 |---|---|---|
@@ -14,4 +14,4 @@ The available receipts sometimes reference files absent from this checkout. The 
 
 Public-dataset identifiers and model outputs are included to support alignment and verification. Raw images and expert-review coordinator files are excluded. No human chest-radiograph review was performed. Image-similarity review must not be represented as clinical adjudication or a guarantee against patient overlap.
 
-A private repository is not a public release. Sharing and licensing terms have not been assigned. The listed gaps describe the current execution archive and should be considered when assessing reproducibility.
+The listed gaps describe the current execution archive and should be considered when assessing reproducibility. The threshold-uncertainty and calibration analyses in `experiments/revision/` need only the saved per-image scores listed above.
