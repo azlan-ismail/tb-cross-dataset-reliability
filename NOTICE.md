@@ -1,7 +1,15 @@
 # Rights and reuse
 
-This private working repository has no blanket open-source licence. Do not interpret availability to collaborators as permission for unrestricted redistribution.
+Source code in this repository is released under the MIT licence
+([LICENSE](LICENSE)). Derived evaluation records are released under CC BY 4.0
+([LICENSE-DATA.md](LICENSE-DATA.md)). The authors have confirmed permission
+to release the included materials.
 
-Research code, original FYP materials, pretrained models and datasets can have different owners and terms. Dataset images and pretrained/trained model binaries are not redistributed here. Obtain source data and model checkpoints from their respective providers and observe their terms.
+Dataset images and pretrained or trained model binaries are not redistributed
+here. Obtain source data and model checkpoints from their respective providers
+and observe their terms. The related PulmoVision application
+(<https://github.com/HarithHadi/PulmoVision>) is a separate project with its
+own terms.
 
-Before a public release, establish the appropriate licence for original code, confirm permission to redistribute supporting materials and review dataset-derived identifiers. No clinical use is supported by this research repository.
+This is a research archive. It is not a clinical diagnostic system, and no
+clinical use is supported.
