@@ -2,11 +2,9 @@ cff-version: 1.2.0
 message: "If you use this archive, please cite it using the metadata from this file."
 title: "Code and evaluation records for: High AUROC, Unstable Thresholds: Cross-Dataset Evaluation of Tuberculosis Chest-Radiograph Classifiers"
 type: software
-version: 1.0.0
-date-released: 2026-11-06
-license:
-  - MIT
-  - CC-BY-4.0
+version: 1.0.1
+date-released: "2026-11-06"
+license: MIT
 authors:
   - family-names: Ismail
     given-names: Azlan

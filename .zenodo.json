@@ -1,0 +1,38 @@
+{
+  "title": "Code and evaluation records for: High AUROC, Unstable Thresholds: Cross-Dataset Evaluation of Tuberculosis Chest-Radiograph Classifiers",
+  "upload_type": "software",
+  "version": "1.0.1",
+  "description": "<p>Code and saved evaluation records for a cross-dataset study of tuberculosis chest-radiograph classifiers built on frozen RAD-DINO and DINOv2 features. Classifiers were developed on Shenzhen and evaluated on Montgomery and a duplicate-screened TBX11K cohort.</p><p>The archive covers threshold transfer, threshold-selection uncertainty, negative-case spectrum, calibration, matched encoder-resolution comparisons and a preprocessing diagnostic. Raw radiographs and model binaries are not included. Code is released under the MIT licence; derived evaluation records under CC BY 4.0 (see LICENSE-DATA.md).</p>",
+  "creators": [
+    {
+      "name": "Ismail, Azlan",
+      "affiliation": "Universiti Teknologi MARA (UiTM)"
+    },
+    {
+      "name": "Hadi, Muhamad Harith",
+      "affiliation": "Universiti Teknologi MARA (UiTM)"
+    },
+    {
+      "name": "Mutalib, Sofianita",
+      "affiliation": "Universiti Teknologi MARA (UiTM)"
+    },
+    {
+      "name": "Sulaiman, Mohd Suffian",
+      "affiliation": "Universiti Teknologi MARA (UiTM)"
+    },
+    {
+      "name": "AbuKhait, Jafar",
+      "affiliation": "Tafila Technical University"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "tuberculosis",
+    "chest radiography",
+    "external validation",
+    "decision threshold",
+    "calibration",
+    "reproducibility"
+  ]
+}
