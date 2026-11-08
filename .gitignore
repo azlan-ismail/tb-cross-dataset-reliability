@@ -29,3 +29,15 @@ venv/
 *.fdb_latexmk
 .DS_Store
 Thumbs.db
+
+# The manuscript itself is never committed (only code and derived records).
+*.pdf
+*.doc
+*.docx
+*.odt
+*.rtf
+*.bib
+*.cls
+*.bst
+*.tex
+!evidence/manuscript/tables/*.tex
