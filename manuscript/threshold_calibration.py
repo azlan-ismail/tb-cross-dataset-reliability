@@ -5,6 +5,9 @@ rank such that P(Binomial(n, alpha) <= k-1) <= delta. Under exchangeability this
 bounds P(miss rate > alpha) by delta (Tong, Feng & Li, Sci Adv 2018).
 Compared with the empirical rule (highest threshold with sample sensitivity >= 1-alpha).
 Uses only saved per-image scores.
+
+Usage: python manuscript/threshold_calibration.py REPO OUT
+Writes OUT/threshold_calibration.json (2,000 random draws per n, seed 20261108).
 """
 import csv, json, math, sys
 import numpy as np
@@ -93,7 +96,7 @@ for c, ns in NS.items():
                 for k, a in d.items():
                     summ[k] = {'median': float(np.median(a)), 'p10': float(np.percentile(a, 10)), 'p90': float(np.percentile(a, 90))}
                 res['local'].setdefault(c, {}).setdefault(m, {}).setdefault(rule, []).append(summ)
-json.dump(res, open(f'{OUT}/remedy_analysis.json', 'w'), indent=1)
+json.dump(res, open(f'{OUT}/threshold_calibration.json', 'w'), indent=1)
 
 print('min positives', res['min_positives'])
 for m, o in res['development_only'].items():

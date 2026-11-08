@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this archive, please cite it using the metadata from this file."
-title: "Code and evaluation records for: High AUROC, Unstable Thresholds: Cross-Dataset Evaluation of Tuberculosis Chest-Radiograph Classifiers"
+title: "Code and evaluation records for: High AUROC, Unreliable Thresholds: Uncertainty-Aware Threshold Calibration for Tuberculosis Chest-Radiograph Classifiers"
 type: software
-version: 1.0.1
-date-released: "2026-11-06"
+version: 1.1.0
+date-released: "2026-11-08"
 license: MIT
 authors:
   - family-names: Ismail
@@ -24,11 +24,13 @@ authors:
     given-names: Jafar
     affiliation: "Tafila Technical University"
 repository-code: "https://github.com/azlan-ismail/tb-cross-dataset-reliability"
-abstract: "Code and saved evaluation records for a cross-dataset study of tuberculosis chest-radiograph classifiers built on frozen RAD-DINO and DINOv2 features. Classifiers were developed on Shenzhen and evaluated on Montgomery and a duplicate-screened TBX11K cohort. The archive covers threshold transfer, threshold-selection uncertainty, negative-case spectrum, calibration, matched encoder-resolution comparisons and a preprocessing diagnostic. Raw radiographs and model binaries are not included."
+abstract: "Code and saved evaluation records for a study of tuberculosis chest-radiograph classifiers built on frozen RAD-DINO features. Classifiers were developed on Shenzhen, and their validation-selected thresholds were transferred unchanged to Montgomery and a duplicate-screened TBX11K cohort. The archive covers threshold-selection uncertainty, a proposed uncertainty-aware threshold calibration (Neyman-Pearson order-statistic rule), negative-case spectrum, calibration, and secondary encoder and preprocessing comparisons. Scripts regenerate every figure and table of the article from saved per-image scores. Raw radiographs and model binaries are not included."
 keywords:
   - tuberculosis
   - chest radiography
   - external validation
   - decision threshold
+  - threshold calibration
+  - Neyman-Pearson classification
   - calibration
   - reproducibility

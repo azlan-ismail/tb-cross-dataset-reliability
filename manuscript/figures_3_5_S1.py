@@ -1,3 +1,9 @@
+"""Figures 3 and 5 of the article and Supplementary Figure S1.
+
+Usage: python manuscript/figures_3_5_S1.py REPO THRESHOLD_UNCERTAINTY_JSON OUT
+Also writes OUT/local_threshold_subgroups.json (Wilson specificity by TBX11K
+negative subgroup at the local reference thresholds, used by Table 4).
+"""
 import csv, json, math, sys
 from pathlib import Path
 import numpy as np
@@ -39,13 +45,13 @@ def leg(ax, items, ncol=3, y=1.005):
 def save(fig, stem):
     fig.savefig(OUT / f'{stem}.pdf'); fig.savefig(OUT / f'{stem}.png', dpi=200); plt.close(fig)
 
-# ---------- Figure 2: operating-point uncertainty ----------
+# ---------- Figure 3: threshold-selection uncertainty ----------
 fig = plt.figure(figsize=(7.6, 7.0))
 axa = fig.add_axes([0.20, 0.60, 0.33, 0.28]); axb = fig.add_axes([0.64, 0.60, 0.33, 0.28])
 axc = fig.add_axes([0.20, 0.11, 0.77, 0.28])
-panel(axa, 'A  Threshold for 90% sensitivity', LABELS, (0, 1), [0, 0.25, 0.5, 0.75, 1.0], pad=44)
-panel(axb, 'B  Transferred sensitivity', [''] * 4, (40, 100), [40, 60, 80, 100], pad=44)
-panel(axc, 'C  TBX11K specificity at a locally selected threshold', LABELS, (40, 100), [40, 50, 60, 70, 80, 90, 100])
+panel(axa, 'a  Threshold for 90% sensitivity', LABELS, (0, 1), [0, 0.25, 0.5, 0.75, 1.0], pad=44)
+panel(axb, 'b  Transferred sensitivity', [''] * 4, (40, 100), [40, 60, 80, 100], pad=44)
+panel(axc, 'c  TBX11K specificity at a locally selected threshold', LABELS, (40, 100), [40, 50, 60, 70, 80, 90, 100])
 axa.set_xlabel('TB-score threshold'); axb.set_xlabel('Sensitivity (%)'); axc.set_xlabel('Specificity (%)')
 for i, m in enumerate(MODELS):
     o = res[m]
@@ -53,7 +59,7 @@ for i, m in enumerate(MODELS):
     pt(axa, o['montgomery']['cohort_t90'], *o['montgomery']['cohort_t90_ci'], i, BLUE, 'o')
     pt(axa, o['tbx11k']['cohort_t90'], *o['tbx11k']['cohort_t90_ci'], i + 0.24, ORANGE, 's')
 leg(axa, [(GREY, 'o', 'Shenzhen val.', None), (BLUE, 'o', 'Montgomery', None), (ORANGE, 's', 'TBX11K', None)], ncol=2)
-saved = {(r['cohort'], r['model']): r for r in rd(f'{R}/figures/data/figure2_data.csv') if r['panel'] == 'B'}
+saved = {(r['cohort'], r['model']): r for r in rd(f'{R}/evidence/manuscript/external_performance_estimates.csv') if r['panel'] == 'B'}
 for i, m in enumerate(MODELS):
     for c, off, col, mk in [('montgomery', -0.17, BLUE, 'o'), ('tbx11k', 0.17, ORANGE, 's')]:
         o = res[m][c]; v = 100 * o['sens_at_transfer']
@@ -77,12 +83,12 @@ for i, m in enumerate(MODELS):
         k = sum(x < t for x in neg); lo, hi = wilson(k, len(neg)); sub[(m, g)] = (k, len(neg), lo, hi)
         pt(axc, 100 * k / len(neg), 100 * lo, 100 * hi, i + off, col, mk)
 leg(axc, [(GREEN, 'o', 'Healthy (n = 800)', None), (PINK, 'D', 'Other illness (n = 794)', None)], ncol=2)
-fig.text(0.20, 0.015, 'A, B (dashed): 10,000 class-stratified bootstrap resamples   |   C: Wilson 95% intervals',
+fig.text(0.20, 0.015, 'a, b (dashed): 10,000 class-stratified bootstrap resamples   |   c: Wilson 95% intervals',
          fontsize=8.6, color='#555555')
 save(fig, 'Fig3')
-json.dump({f'{m}|{g}': v for (m, g), v in sub.items()}, open(OUT / 'fig3c_subgroups.json', 'w'), indent=1)
+json.dump({f'{m}|{g}': v for (m, g), v in sub.items()}, open(OUT / 'local_threshold_subgroups.json', 'w'), indent=1)
 
-# ---------- Figure 3: score distributions + reliability (seed 42) ----------
+# ---------- Figure 5: score distributions and reliability (seed 42) ----------
 m = 'head_seed42'; t = res[m]['validation_threshold']
 val = rd(f'{R}/evidence/development/models/{m}_validation_predictions.csv')
 al = rd(f'{R}/evidence/comparators/aligned_predictions.csv')
@@ -115,7 +121,7 @@ axa.tick_params(axis='y', length=0)
 for s in ['top', 'right', 'left']: axa.spines[s].set_visible(False)
 axa.grid(axis='x', color='#e1e4e8', linewidth=0.65, zorder=0)
 axa.set_xlabel('TB score (logit-spaced axis)')
-axa.set_title('A  Score distributions, neural classifier (seed 42)', loc='left', fontsize=11.5, fontweight='bold', pad=22)
+axa.set_title('a  Score distributions, neural classifier (seed 42)', loc='left', fontsize=11.5, fontweight='bold', pad=22)
 axa.text(logit(t), -0.75, f' transferred threshold {t:.3f}', fontsize=9, color='#555555', ha='left', va='bottom')
 # reliability
 def rel(p, y, bins=10):
@@ -135,20 +141,20 @@ axb.set_xlim(0, 1); axb.set_ylim(0, 1); axb.set_aspect('equal')
 axb.set_xlabel('Mean predicted TB score'); axb.set_ylabel('Observed TB fraction')
 for s in ['top', 'right']: axb.spines[s].set_visible(False)
 axb.grid(color='#e1e4e8', linewidth=0.6)
-axb.set_title('B  Reliability (10 bins, n ≥ 5)', loc='left', fontsize=11.5, fontweight='bold', pad=8)
+axb.set_title('b  Reliability (10 bins, n ≥ 5)', loc='left', fontsize=11.5, fontweight='bold', pad=8)
 axb.legend(loc='upper left', bbox_to_anchor=(1.04, 1.0), frameon=False)
 save(fig, 'Fig5')
 
-# ---------- Figure 4: matched encoders (panels A/B of the archived figure) ----------
-rows = rd(f'{R}/figures/data/figure3_data.csv')
+# ---------- Supplementary Figure S1: matched encoder-resolution comparison ----------
+rows = rd(f'{R}/evidence/manuscript/encoder_comparison_estimates.csv')
 def sel(**f):
     x = [r for r in rows if all(r[k] == v for k, v in f.items())]; assert len(x) == 1, f; return x[0]
 fig = plt.figure(figsize=(7.6, 3.7))
 axa = fig.add_axes([0.20, 0.17, 0.35, 0.62]); axb = fig.add_axes([0.64, 0.17, 0.33, 0.62])
 gs = [('montgomery', '224'), ('montgomery', '518'), ('tbx11k', '224'), ('tbx11k', '518')]
 labs = ['Montgomery\n224 pixels', 'Montgomery\n518 pixels', 'TBX11K\n224 pixels', 'TBX11K\n518 pixels']
-panel(axa, 'A  Matched encoders', labs, (0.5, 1.0), [0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-panel(axb, 'B  Paired AUROC contrast', [''] * 4, (-0.025, 0.4), [0, 0.1, 0.2, 0.3, 0.4])
+panel(axa, 'a  Matched encoders', labs, (0.5, 1.0), [0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+panel(axb, 'b  Paired AUROC contrast', [''] * 4, (-0.025, 0.4), [0, 0.1, 0.2, 0.3, 0.4])
 axa.set_xlabel('AUROC'); axb.set_xlabel('RAD-DINO minus DINOv2')
 axb.axvline(0, color='#555555', linewidth=1.1, linestyle=(0, (3, 3)))
 for i, (c, r_) in enumerate(gs):
