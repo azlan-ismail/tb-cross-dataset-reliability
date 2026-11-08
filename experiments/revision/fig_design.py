@@ -10,8 +10,8 @@ GREY_F, GREY_E = '#f1f2f4', '#8a8f98'
 BLUE_F, BLUE_E = '#e6f0f8', '#0072B2'
 ORNG_F, ORNG_E = '#fbece3', '#D55E00'
 GRN_F, GRN_E = '#e5f4ef', '#009E73'
-fig = plt.figure(figsize=(7.6, 6.9))
-ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(0, 91); ax.axis('off')
+fig = plt.figure(figsize=(7.6, 8.2))
+ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(-17, 91); ax.axis('off')
 
 def box(x, y, w, h, title, body='', fc=GREY_F, ec=GREY_E, ls='-', tsize=9.6, bsize=8.6):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle='round,pad=0,rounding_size=1.2',
@@ -78,7 +78,7 @@ ax.text(67, 58, 'applied unchanged', ha='center', va='center', fontsize=8.2, col
         rotation=90, bbox=dict(fc='white', ec='none', pad=1.0), zorder=3)
 
 # analyses
-header(1.5, 23.5, '4  Analyses on both external cohorts')
+header(1.5, 23.5, '4  Evaluation on both external cohorts')
 W = 23.125; G = 1.5
 items = [('A  Operating point', 'AUROC, sensitivity\nand specificity at the\ntransferred threshold'),
          ('B  Threshold uncertainty', 'joint bootstrap interval;\nlocal reference threshold'),
@@ -86,7 +86,12 @@ items = [('A  Operating point', 'AUROC, sensitivity\nand specificity at the\ntra
          ('D  Calibration', 'Brier score, ECE,\ncalibration slope')]
 for i, (t, b) in enumerate(items):
     box(1.5 + i * (W + G), 9.5, W, 13, t, b, fc=GRN_F, ec=GRN_E, tsize=8.6, bsize=8.2)
-box(1.5, 1.2, 97.0, 6.3,
+header(1.5, 4.3, '5  Proposed remedy')
+box(1.5, -8.6, 97.0, 12.0, 'E  Uncertainty-aware threshold calibration',
+    'threshold = order statistic of n $\\geq$ 29 confirmed TB images giving $\\geq$90% sensitivity with 95% confidence\n'
+    'evaluated against the conventional rule: development-only transfer and local calibration on each external cohort',
+    fc=BLUE_F, ec=BLUE_E, tsize=9.2, bsize=8.3)
+box(1.5, -16.0, 97.0, 6.0,
     'Secondary: RAD-DINO vs DINOv2 at 224 and 518 pixels, identical preprocessing and linear classifier',
     fc='white', ec=GREY_E, ls=(0, (4, 2.5)), tsize=8.6)
 fig.savefig(OUT / 'Fig1.pdf'); fig.savefig(OUT / 'Fig1.png', dpi=200)
