@@ -3,7 +3,6 @@
 These scripts regenerate every figure, table and secondary analysis in
 
 > **High AUROC, Unreliable Thresholds: Uncertainty-Aware Threshold Calibration for Tuberculosis Chest-Radiograph Classifiers**
-> (submitted to *Computerized Medical Imaging and Graphics*)
 
 They read only saved per-image scores and estimates in `evidence/`. No GPU, data download or model fitting is needed.
 
