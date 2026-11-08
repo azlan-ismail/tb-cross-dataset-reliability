@@ -158,5 +158,5 @@ for i, (c, r_) in enumerate(gs):
     r = sel(panel='B', cohort=c, group=r_)
     pt(axb, float(r['estimate']), float(r['ci_low']), float(r['ci_high']), i, '#374151', 's')
 leg(axa, [(GREEN, 'o', 'RAD-DINO', None), (PINK, 'D', 'DINOv2', None)], ncol=2)
-save(fig, 'Fig6')
+save(fig, 'FigS1')
 print('ok'); print(json.dumps({f'{m}|{g}': [round(v[0]/v[1],4), round(v[2],4), round(v[3],4)] for (m, g), v in sub.items()}))
