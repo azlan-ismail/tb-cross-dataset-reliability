@@ -1,10 +1,10 @@
 """LaTeX row blocks for Tables 2-4 of the article and Tables S4-S5 of the supplement.
 
-Usage: python manuscript/tables.py REPO UNCERTAINTY_JSON SUBGROUPS_JSON CALIBRATION_JSON OUT
+Usage: python analysis/tables.py REPO UNCERTAINTY_JSON SUBGROUPS_JSON CALIBRATION_JSON OUT
 
 Each table body (the rows between \\midrule and \\bottomrule) is written to
-OUT/tables/<name>.tex. The files in evidence/manuscript/tables/ match the
-published manuscript exactly. Uses only saved estimates and standard-library Python.
+OUT/tables/<name>.tex. The files in evidence/analysis/tables/ match the
+submitted article exactly. Uses only saved estimates and standard-library Python.
 """
 import csv, json, sys
 from pathlib import Path
@@ -39,7 +39,7 @@ for r in rd(R / 'evidence/development/results/summary.csv'):           # Montgom
 for m in M:                                                             # TBX11K
     j = json.load(open(R / f'evidence/tbx11k/{m}_metrics.json'))
     saved[('tbx11k', m)] = dict(j['metrics']) | {f'{k}_ci': tuple(j['bootstrap_95ci'][k]) for k in ['auroc', 'sensitivity', 'specificity']}
-wilson = {(r['model'], r['group']): r for r in rd(R / 'evidence/manuscript/external_performance_estimates.csv') if r['panel'] == 'C'}
+wilson = {(r['model'], r['group']): r for r in rd(R / 'evidence/analysis/external_performance_estimates.csv') if r['panel'] == 'C'}
 
 def blocks(make):
     rows = []

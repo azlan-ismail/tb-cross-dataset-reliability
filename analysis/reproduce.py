@@ -1,20 +1,20 @@
-"""Regenerate every figure, table and analysis output of the manuscript from saved scores.
+"""Regenerate every figure, table and analysis output of the article from saved scores.
 
-Usage (from the repository root):  python manuscript/reproduce.py [OUT]
+Usage (from the repository root):  python analysis/reproduce.py [OUT]
 
-Runs each script in manuscript/ in order, writes the outputs to OUT
-(default: manuscript-output/), and checks that the regenerated analysis
+Runs each script in analysis/ in order, writes the outputs to OUT
+(default: analysis-output/), and checks that the regenerated analysis
 files and table bodies are byte-identical to those saved in
-evidence/manuscript/. Needs Python 3.10+, NumPy and Matplotlib; no GPU,
+evidence/analysis/. Needs Python 3.10+, NumPy and Matplotlib; no GPU,
 data download or model fitting.
 """
 import hashlib, json, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-HERE = ROOT / 'manuscript'
-SAVED = ROOT / 'evidence' / 'manuscript'
-OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'manuscript-output'
+HERE = ROOT / 'analysis'
+SAVED = ROOT / 'evidence' / 'analysis'
+OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'analysis-output'
 OUT.mkdir(parents=True, exist_ok=True)
 
 def run(script, *args):
@@ -41,7 +41,7 @@ prov = json.loads((SAVED / 'estimates_provenance.json').read_text(encoding='utf-
 have = {sha(p) for p in (ROOT / 'evidence').rglob('*') if p.is_file()}
 missing = [k for k, v in prov['sources'].items() if v['sha256'] not in have]
 
-print(f'\n{len(checks) - len(failed)}/{len(checks)} outputs identical to evidence/manuscript/')
+print(f'\n{len(checks) - len(failed)}/{len(checks)} outputs identical to evidence/analysis/')
 print(f'{len(prov["sources"]) - len(missing)}/{len(prov["sources"])} plotted-estimate source files found unchanged in evidence/')
 print(f'Figures written to {OUT}: ' + ', '.join(sorted(p.name for p in OUT.glob('Fig*.pdf'))))
 if failed or missing:

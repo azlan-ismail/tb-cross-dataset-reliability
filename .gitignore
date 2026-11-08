@@ -12,7 +12,7 @@ venv/
 /downloads/
 /runs/
 /verification-output/
-/manuscript-output/
+/analysis-output/
 *.zip
 *.pt
 *.pth
@@ -30,7 +30,7 @@ venv/
 .DS_Store
 Thumbs.db
 
-# The manuscript itself is never committed (only code and derived records).
+# The article itself is never committed (only code and derived records).
 *.pdf
 *.doc
 *.docx
@@ -40,4 +40,4 @@ Thumbs.db
 *.cls
 *.bst
 *.tex
-!evidence/manuscript/tables/*.tex
+!evidence/analysis/tables/*.tex

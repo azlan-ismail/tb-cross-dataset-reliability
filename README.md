@@ -21,14 +21,14 @@ The article shows three things:
 2. **A calibration method is proposed and tested.** An uncertainty-aware threshold calibration (a Neyman–Pearson order-statistic rule) needs at least 29 local TB-positive images. It met the 90% sensitivity target in most repeated calibrations, at a stated referral cost.
 3. **Other-illness negatives drove the remaining over-referral.** Local thresholds did not remove it.
 
-## Reproduce the manuscript from saved scores (no GPU)
+## Reproduce the article's figures and tables from saved scores (no GPU)
 
 ```sh
-python -m pip install -r manuscript/requirements.txt
-python manuscript/reproduce.py
+python -m pip install -r analysis/requirements.txt
+python analysis/reproduce.py
 ```
 
-This regenerates Figures 1–5, Supplementary Figure S1, Tables 2–4, Supplementary Tables S4–S5, and the threshold-uncertainty and calibration analyses. It then checks that the outputs match the saved copies in `evidence/manuscript/`. See [manuscript/README.md](manuscript/README.md) for the script behind each figure and table.
+This regenerates Figures 1–5, Supplementary Figure S1, Tables 2–4, Supplementary Tables S4–S5, and the threshold-uncertainty and calibration analyses. It then checks that the outputs match the saved copies in `evidence/analysis/`. See [analysis/README.md](analysis/README.md) for the script behind each figure and table.
 
 ## Verify the packaged records
 
@@ -44,10 +44,10 @@ python scripts/reproduce_point_metrics.py
 
 ## Repository map
 
-| Folder | Contents | Manuscript |
+| Folder | Contents | Article |
 |---|---|---|
-| `manuscript/` | Scripts that regenerate every figure, table and secondary analysis from saved scores | All figures and Tables 2–4, S4–S5 |
-| `evidence/manuscript/` | Saved analysis outputs, table bodies and plotted estimates | As above |
+| `analysis/` | Scripts that regenerate every figure, table and secondary analysis from saved scores | All figures and Tables 2–4, S4–S5 |
+| `evidence/analysis/` | Saved analysis outputs, table bodies and plotted estimates | As above |
 | `experiments/development/` | Shenzhen split, RAD-DINO feature extraction, classifier fitting and threshold selection (Colab) | Sections 3.1–3.5 |
 | `experiments/external/` | TBX11K duplicate screening, cohort lock and external evaluation | Sections 3.2–3.3 |
 | `experiments/matched_resolution/` | Matched RAD-DINO and DINOv2 comparison at 224 and 518 pixels | Supplementary S2 |
