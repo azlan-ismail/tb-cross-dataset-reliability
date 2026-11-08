@@ -5,7 +5,9 @@ Scripts for the manuscript revision. They read only the saved per-image scores i
 | Script | Output |
 |---|---|
 | `analysis.py REPO OUT` | `tier1_analysis.json`: threshold-selection uncertainty (validation re-selection propagated to external sensitivity), local reference thresholds, referral rate, ECE and calibration slope; 10,000 class-stratified resamples, seed 20261106 |
-| `figs.py REPO JSON OUT` | Figures 3-5 (`Fig3`-`Fig5`, PDF and PNG) and `fig3c_subgroups.json` (Wilson subgroup specificity at local thresholds) |
+| `figs.py REPO JSON OUT` | Figures 3, 5 and 6 (PDF and PNG) and `fig3c_subgroups.json` (Wilson subgroup specificity at local thresholds) |
+| `remedy.py REPO OUT` | `remedy_analysis.json`: uncertainty-aware (Neyman-Pearson order-statistic) threshold rule versus the conventional rule, development-only and local calibration with n TB positives; 2,000 random draws per n, seed 20261108 |
+| `remedy_outputs.py JSON REPO OUT` | Figure 4 (local calibration) and LaTeX rows for the threshold-rule table |
 | `tables.py JSON SUBGROUPS REPO` | LaTeX rows for the threshold, negative-subgroup and calibration tables |
 | `fig_design.py OUT` | Figure 1, the study-design diagram |
 

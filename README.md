@@ -30,13 +30,15 @@ The first checks packaged file hashes, source syntax and archived execution rece
 
 ## Revision analyses from saved scores
 
-The threshold-selection uncertainty, local reference threshold, referral-rate and calibration analyses reported in the manuscript are computed only from the saved per-image scores, without a GPU. They need NumPy and Matplotlib:
+The threshold-selection uncertainty, local reference threshold, referral-rate, calibration and uncertainty-aware threshold analyses reported in the manuscript are computed only from the saved per-image scores, without a GPU. They need NumPy and Matplotlib:
 
 ```sh
 python experiments/revision/analysis.py . OUT          # OUT/tier1_analysis.json (10,000 resamples, seed 20261106)
-python experiments/revision/figs.py . OUT/tier1_analysis.json OUT   # Figures 3-5 and fig3c_subgroups.json
+python experiments/revision/figs.py . OUT/tier1_analysis.json OUT   # Figures 3, 5, 6 and fig3c_subgroups.json
 python experiments/revision/tables.py OUT/tier1_analysis.json OUT/fig3c_subgroups.json .   # LaTeX table rows
 python experiments/revision/fig_design.py OUT          # Figure 1 (study design)
+python experiments/revision/remedy.py . OUT            # OUT/remedy_analysis.json (uncertainty-aware threshold rule)
+python experiments/revision/remedy_outputs.py OUT/remedy_analysis.json . OUT   # Figure 4 and table rows
 ```
 
 The outputs used in the manuscript are saved in `evidence/revision/`.
