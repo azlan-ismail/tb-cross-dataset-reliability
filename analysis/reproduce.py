@@ -23,8 +23,8 @@ def run(script, *args):
                    stdout=subprocess.DEVNULL)
 
 U, C, S = OUT / 'threshold_uncertainty.json', OUT / 'threshold_calibration.json', OUT / 'local_threshold_subgroups.json'
-run('threshold_uncertainty.py', ROOT, OUT)          # Sections 3.6, 3.8-3.9; results 4.2, 4.4-4.5
-run('threshold_calibration.py', ROOT, OUT)          # Section 3.7 (Algorithm 1); results 4.3
+run('threshold_uncertainty.py', ROOT, OUT)          # Sections 3.4, 3.6; results 4.2, 4.4-4.5
+run('threshold_calibration.py', ROOT, OUT)          # Section 3.5 (Algorithm 1); results 4.3
 run('figure1_study_design.py', OUT)                 # Figure 1
 run('figure2_external_performance.py', ROOT, OUT)   # Figure 2
 run('figures_3_5_S1.py', ROOT, U, OUT)              # Figures 3, 5 and S1
