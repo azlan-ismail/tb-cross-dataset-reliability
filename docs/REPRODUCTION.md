@@ -37,7 +37,7 @@ python experiments/development/experiment.py evaluate --data runs/reproduction/d
 
 These commands require the relevant ML packages, source downloads, substantial storage and GPU access for practical feature extraction. They have not been rerun during repository setup. Use a new output directory; do not overwrite the completed experiment. Compare generated source-image hashes, manifest and split with the archived manifest before claiming reproduction. The review file adjacent to `prepare.py` records AI-assisted image-similarity decisions, not expert radiological adjudication or confirmed patient identity.
 
-The initial study manifest contains the 529/133 Shenzhen development partition and 138 Montgomery images. The RAD-DINO revision is pinned in the source. Training uses three seeded neural classifiers and a linear classifier. The final thesis's earlier Llama report evaluation and Kaggle TB classifier are separate from these journal experiments.
+The initial study manifest contains the 529/133 Shenzhen development partition and 138 Montgomery images. The RAD-DINO revision is pinned in the source. Training uses three seeded neural classifiers and a linear classifier.
 
 ## 4. External and later experiments
 

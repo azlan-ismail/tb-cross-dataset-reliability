@@ -4,7 +4,7 @@ Usage: python analysis/tables.py REPO UNCERTAINTY_JSON SUBGROUPS_JSON CALIBRATIO
 
 Each table body (the rows between \\midrule and \\bottomrule) is written to
 OUT/tables/<name>.tex. The files in evidence/analysis/tables/ match the
-submitted article exactly. Uses only saved estimates and standard-library Python.
+article exactly. Uses only saved estimates and standard-library Python.
 """
 import csv, json, sys
 from pathlib import Path

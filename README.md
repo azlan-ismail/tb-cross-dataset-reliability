@@ -2,7 +2,7 @@
 
 Code and evaluation records for the article:
 
-> Azlan Ismail, Muhamad Harith Hadi, Sofianita Mutalib, Mohd Suffian Sulaiman and Jafar AbuKhait. **High AUROC, Unreliable Thresholds: Uncertainty-Aware Threshold Calibration for Tuberculosis Chest-Radiograph Classifiers.** Submitted to *Computerized Medical Imaging and Graphics*.
+> Azlan Ismail, Muhamad Harith Hadi, Sofianita Mutalib, Mohd Suffian Sulaiman and Jafar AbuKhait. **High AUROC, Unreliable Thresholds: Uncertainty-Aware Threshold Calibration for Tuberculosis Chest-Radiograph Classifiers.**
 
 Correspondence: azlanismail@uitm.edu.my.
 
@@ -62,7 +62,7 @@ The historical experiment scripts keep their original Colab and Drive paths so t
 
 `SOURCE_MAP.csv` records where each copied artifact came from, with its SHA-256 and any transformation. `ARTIFACTS.sha256` covers all packaged code and records.
 
-Raw radiographs, dataset archives, trained model binaries and credentials are not included. Obtain the images from the Shenzhen and Montgomery collections (NLM Open-i) and from TBX11K (<https://github.com/yun-liu/Tuberculosis>). The related PulmoVision application is a separate project: <https://github.com/HarithHadi/PulmoVision>.
+Raw radiographs, dataset archives, trained model binaries and credentials are not included. Obtain the images from the Shenzhen and Montgomery collections (NLM Open-i) and from TBX11K (<https://github.com/yun-liu/Tuberculosis>).
 
 ## Licence and citation
 
