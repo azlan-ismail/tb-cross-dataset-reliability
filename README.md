@@ -34,7 +34,7 @@ The threshold-selection uncertainty, local reference threshold, referral-rate, c
 
 ```sh
 python experiments/revision/analysis.py . OUT          # OUT/tier1_analysis.json (10,000 resamples, seed 20261106)
-python experiments/revision/figs.py . OUT/tier1_analysis.json OUT   # Figures 3, 5, 6 and fig3c_subgroups.json
+python experiments/revision/figs.py . OUT/tier1_analysis.json OUT   # Figures 3, 5, S1 and fig3c_subgroups.json
 python experiments/revision/tables.py OUT/tier1_analysis.json OUT/fig3c_subgroups.json .   # LaTeX table rows
 python experiments/revision/fig_design.py OUT          # Figure 1 (study design)
 python experiments/revision/remedy.py . OUT            # OUT/remedy_analysis.json (uncertainty-aware threshold rule)
