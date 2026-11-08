@@ -6,7 +6,7 @@ bounds P(miss rate > alpha) by delta (Tong, Feng & Li, Sci Adv 2018).
 Compared with the empirical rule (highest threshold with sample sensitivity >= 1-alpha).
 Uses only saved per-image scores.
 
-Usage: python manuscript/threshold_calibration.py REPO OUT
+Usage: python analysis/threshold_calibration.py REPO OUT
 Writes OUT/threshold_calibration.json (2,000 random draws per n, seed 20261108).
 """
 import csv, json, math, sys

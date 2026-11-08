@@ -1,6 +1,6 @@
 """Threshold-selection uncertainty, local reference thresholds, referral rate and calibration.
 
-Usage: python manuscript/threshold_uncertainty.py REPO OUT
+Usage: python analysis/threshold_uncertainty.py REPO OUT
 Writes OUT/threshold_uncertainty.json from saved per-image scores (no model fitting).
 10,000 class-stratified bootstrap resamples, seed 20261106.
 """

@@ -1,8 +1,8 @@
 """Figure 2: external performance at the unchanged development thresholds.
 
-Usage: python manuscript/figure2_external_performance.py REPO OUT
+Usage: python analysis/figure2_external_performance.py REPO OUT
 
-Plots the saved estimates in evidence/manuscript/external_performance_estimates.csv:
+Plots the saved estimates in evidence/analysis/external_performance_estimates.csv:
 AUROC and transferred sensitivity with saved percentile-bootstrap intervals
 (2,000 resamples for Montgomery, 10,000 for TBX11K) and TBX11K subgroup
 specificity with Wilson intervals. No resampling or model fitting is performed.
@@ -29,7 +29,7 @@ SUBGROUP = {'health': ('#009E73', 'o', 'Healthy (n = 800)'), 'sick': ('#CC79A7',
 MODELS = ['linear', 'head_seed42', 'head_seed43', 'head_seed44']
 LABELS = ['Linear', 'Neural: seed 42', 'Neural: seed 43', 'Neural: seed 44']
 
-with open(R / 'evidence/manuscript/external_performance_estimates.csv', newline='', encoding='utf-8') as f:
+with open(R / 'evidence/analysis/external_performance_estimates.csv', newline='', encoding='utf-8') as f:
     rows = list(csv.DictReader(f))
 for row in rows:
     for key in ['estimate', 'ci_low', 'ci_high']:

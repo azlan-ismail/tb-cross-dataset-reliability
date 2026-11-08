@@ -1,6 +1,6 @@
 """Figures 3 and 5 of the article and Supplementary Figure S1.
 
-Usage: python manuscript/figures_3_5_S1.py REPO THRESHOLD_UNCERTAINTY_JSON OUT
+Usage: python analysis/figures_3_5_S1.py REPO THRESHOLD_UNCERTAINTY_JSON OUT
 Also writes OUT/local_threshold_subgroups.json (Wilson specificity by TBX11K
 negative subgroup at the local reference thresholds, used by Table 4).
 """
@@ -59,7 +59,7 @@ for i, m in enumerate(MODELS):
     pt(axa, o['montgomery']['cohort_t90'], *o['montgomery']['cohort_t90_ci'], i, BLUE, 'o')
     pt(axa, o['tbx11k']['cohort_t90'], *o['tbx11k']['cohort_t90_ci'], i + 0.24, ORANGE, 's')
 leg(axa, [(GREY, 'o', 'Shenzhen val.', None), (BLUE, 'o', 'Montgomery', None), (ORANGE, 's', 'TBX11K', None)], ncol=2)
-saved = {(r['cohort'], r['model']): r for r in rd(f'{R}/evidence/manuscript/external_performance_estimates.csv') if r['panel'] == 'B'}
+saved = {(r['cohort'], r['model']): r for r in rd(f'{R}/evidence/analysis/external_performance_estimates.csv') if r['panel'] == 'B'}
 for i, m in enumerate(MODELS):
     for c, off, col, mk in [('montgomery', -0.17, BLUE, 'o'), ('tbx11k', 0.17, ORANGE, 's')]:
         o = res[m][c]; v = 100 * o['sens_at_transfer']
@@ -146,7 +146,7 @@ axb.legend(loc='upper left', bbox_to_anchor=(1.04, 1.0), frameon=False)
 save(fig, 'Fig5')
 
 # ---------- Supplementary Figure S1: matched encoder-resolution comparison ----------
-rows = rd(f'{R}/evidence/manuscript/encoder_comparison_estimates.csv')
+rows = rd(f'{R}/evidence/analysis/encoder_comparison_estimates.csv')
 def sel(**f):
     x = [r for r in rows if all(r[k] == v for k, v in f.items())]; assert len(x) == 1, f; return x[0]
 fig = plt.figure(figsize=(7.6, 3.7))

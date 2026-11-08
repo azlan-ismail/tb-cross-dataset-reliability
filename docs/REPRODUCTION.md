@@ -13,14 +13,14 @@ The artifact check validates the packaged SHA-256 manifest, copied-artifact hash
 
 The point-metric check uses saved labels, scores and frozen thresholds to calculate AUROC (with tied-score handling), average precision, sensitivity, specificity, Brier score and confusion counts. It compares eight initial classifier/cohort rows and sixteen initial-comparator rows with their saved estimates. The RAD-DINO rows occur in both analyses, so these are 24 verification records, not 24 independent experiments. Results are printed and saved under ignored `verification-output/`. Bootstrap intervals are not recomputed by this helper.
 
-## 2. Manuscript figures, tables and secondary analyses
+## 2. Article figures, tables and secondary analyses
 
 ```sh
-python -m pip install -r manuscript/requirements.txt
-python manuscript/reproduce.py
+python -m pip install -r analysis/requirements.txt
+python analysis/reproduce.py
 ```
 
-This regenerates every figure (1–5 and S1), Tables 2–4 and S4–S5, the threshold-selection uncertainty analysis and the proposed uncertainty-aware threshold calibration. It uses only the saved per-image scores and estimates. It then checks that the regenerated analysis files and table bodies are byte-identical to those in `evidence/manuscript/`. Outputs are written to the ignored folder `manuscript-output/`. See [manuscript/README.md](../manuscript/README.md) for the script behind each item.
+This regenerates every figure (1–5 and S1), Tables 2–4 and S4–S5, the threshold-selection uncertainty analysis and the proposed uncertainty-aware threshold calibration. It uses only the saved per-image scores and estimates. It then checks that the regenerated analysis files and table bodies are byte-identical to those in `evidence/analysis/`. Outputs are written to the ignored folder `analysis-output/`. See [analysis/README.md](../analysis/README.md) for the script behind each item.
 
 ## 3. Initial development experiment (GPU/Colab)
 
@@ -58,4 +58,4 @@ These runners also depend on source-archive backups and receipts, trained initia
 
 ## 5. What remains to make this a full execution archive
 
-See [RELEASE_STATUS.md](RELEASE_STATUS.md). In particular, retrieve original trained weights, archive/download receipts, feature caches where needed, original comparator execution/environment records, and full matched-resolution/preprocessing per-image outputs. Confirm their hashes against the saved receipts. This repository currently supports full regeneration of the manuscript figures and tables from saved scores, saved point-estimate verification and inspection of the historical methods; it is not a guaranteed one-command reproduction of every experiment.
+See [RELEASE_STATUS.md](RELEASE_STATUS.md). In particular, retrieve original trained weights, archive/download receipts, feature caches where needed, original comparator execution/environment records, and full matched-resolution/preprocessing per-image outputs. Confirm their hashes against the saved receipts. This repository currently supports full regeneration of the article figures and tables from saved scores, saved point-estimate verification and inspection of the historical methods; it is not a guaranteed one-command reproduction of every experiment.

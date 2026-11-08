@@ -1,6 +1,6 @@
 """Figure 4: local threshold calibration on TBX11K by number of local TB positives.
 
-Usage: python manuscript/figure4_local_calibration.py THRESHOLD_CALIBRATION_JSON OUT
+Usage: python analysis/figure4_local_calibration.py THRESHOLD_CALIBRATION_JSON OUT
 """
 import json, sys
 from pathlib import Path

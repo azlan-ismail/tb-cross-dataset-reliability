@@ -1,4 +1,4 @@
-# Manuscript figures, tables and analyses
+# Figures, tables and analyses for the article
 
 These scripts regenerate every figure, table and secondary analysis in
 
@@ -12,15 +12,15 @@ They read only saved per-image scores and estimates in `evidence/`. No GPU, data
 From the repository root, with Python 3.10 or later:
 
 ```sh
-python -m pip install -r manuscript/requirements.txt
-python manuscript/reproduce.py            # outputs to manuscript-output/
+python -m pip install -r analysis/requirements.txt
+python analysis/reproduce.py            # outputs to analysis-output/
 ```
 
-`reproduce.py` runs every script below in order. It then checks that the regenerated analysis files and table bodies are byte-identical to the copies saved in `evidence/manuscript/`. It also confirms that the source files behind the plotted estimates are present and unchanged.
+`reproduce.py` runs every script below in order. It then checks that the regenerated analysis files and table bodies are byte-identical to the copies saved in `evidence/analysis/`. It also confirms that the source files behind the plotted estimates are present and unchanged.
 
-## Where each manuscript item comes from
+## Where each article item comes from
 
-| Manuscript item | Script | Saved output in `evidence/manuscript/` |
+| Article item | Script | Saved output in `evidence/analysis/` |
 |---|---|---|
 | Fig. 1 Study design | `figure1_study_design.py` | (diagram only) |
 | Fig. 2 External performance at transferred thresholds | `figure2_external_performance.py` | plots `external_performance_estimates.csv` |
