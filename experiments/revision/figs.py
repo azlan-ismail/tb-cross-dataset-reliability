@@ -137,7 +137,7 @@ for s in ['top', 'right']: axb.spines[s].set_visible(False)
 axb.grid(color='#e1e4e8', linewidth=0.6)
 axb.set_title('B  Reliability (10 bins, n ≥ 5)', loc='left', fontsize=11.5, fontweight='bold', pad=8)
 axb.legend(loc='upper left', bbox_to_anchor=(1.04, 1.0), frameon=False)
-save(fig, 'Fig4')
+save(fig, 'Fig5')
 
 # ---------- Figure 4: matched encoders (panels A/B of the archived figure) ----------
 rows = rd(f'{R}/figures/data/figure3_data.csv')
@@ -158,5 +158,5 @@ for i, (c, r_) in enumerate(gs):
     r = sel(panel='B', cohort=c, group=r_)
     pt(axb, float(r['estimate']), float(r['ci_low']), float(r['ci_high']), i, '#374151', 's')
 leg(axa, [(GREEN, 'o', 'RAD-DINO', None), (PINK, 'D', 'DINOv2', None)], ncol=2)
-save(fig, 'Fig5')
+save(fig, 'Fig6')
 print('ok'); print(json.dumps({f'{m}|{g}': [round(v[0]/v[1],4), round(v[2],4), round(v[3],4)] for (m, g), v in sub.items()}))
