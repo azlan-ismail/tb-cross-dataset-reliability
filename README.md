@@ -48,8 +48,8 @@ python scripts/reproduce_point_metrics.py
 |---|---|---|
 | `analysis/` | Scripts that regenerate every figure, table and secondary analysis from saved scores | All figures and Tables 2–4, S4–S5 |
 | `evidence/analysis/` | Saved analysis outputs, table bodies and plotted estimates | As above |
-| `experiments/development/` | Shenzhen split, RAD-DINO feature extraction, classifier fitting and threshold selection (Colab) | Sections 3.1–3.5 |
-| `experiments/external/` | TBX11K duplicate screening, cohort lock and external evaluation | Sections 3.2–3.3 |
+| `experiments/development/` | Shenzhen split, RAD-DINO feature extraction, classifier fitting and threshold selection (Colab) | Sections 3.1–3.3 |
+| `experiments/external/` | TBX11K duplicate screening, cohort lock and external evaluation | Section 3.2 |
 | `experiments/matched_resolution/` | Matched RAD-DINO and DINOv2 comparison at 224 and 518 pixels | Supplementary S2 |
 | `experiments/comparators/` | Initial DINOv2 and DenseNet121 comparators and case-mix analysis | Supplementary S4 |
 | `experiments/preprocessing/` | DINOv2 resize–crop diagnostic | Supplementary S4 |

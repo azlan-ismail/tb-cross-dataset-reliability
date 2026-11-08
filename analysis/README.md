@@ -24,9 +24,9 @@ python analysis/reproduce.py            # outputs to analysis-output/
 | Fig. 1 Study design | `figure1_study_design.py` | (diagram only) |
 | Fig. 2 External performance at transferred thresholds | `figure2_external_performance.py` | plots `external_performance_estimates.csv` |
 | Table 2 External performance | `tables.py` | `tables/table2_external_performance.tex` |
-| Sections 3.6, 4.2: threshold-selection uncertainty and local reference thresholds | `threshold_uncertainty.py` | `threshold_uncertainty.json` |
+| Sections 3.4, 4.2: threshold-selection uncertainty and local reference thresholds | `threshold_uncertainty.py` | `threshold_uncertainty.json` |
 | Fig. 3 Threshold uncertainty and local-threshold specificity | `figures_3_5_S1.py` | `local_threshold_subgroups.json` |
-| Section 3.7 and Algorithm 1: proposed uncertainty-aware threshold calibration; Section 4.3 | `threshold_calibration.py` | `threshold_calibration.json` |
+| Section 3.5 and Algorithm 1: proposed uncertainty-aware threshold calibration; Section 4.3 | `threshold_calibration.py` | `threshold_calibration.json` |
 | Table 3 Conventional versus uncertainty-aware rule | `tables.py` | `tables/table3_threshold_rules.tex` |
 | Fig. 4 Local calibration by number of local TB positives | `figure4_local_calibration.py` | (figure from `threshold_calibration.json`) |
 | Table 4 TBX11K referral rate and negative-subgroup specificity | `tables.py` | `tables/table4_negative_subgroups.tex` |
