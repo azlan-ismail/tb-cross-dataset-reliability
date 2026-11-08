@@ -1,69 +1,69 @@
-# Cross-dataset reliability of tuberculosis classification
+# High AUROC, unreliable thresholds: tuberculosis chest-radiograph classifiers
 
-Research code and evaluation evidence for exploratory cross-dataset tuberculosis classification, including preprocessing, threshold transfer and negative-case composition.
+Code and evaluation records for the article:
 
-**Authors:** Azlan Ismail, Muhamad Harith Hadi, Sofianita Mutalib, Mohd Suffian Sulaiman and Jafar AbuKhait. Correspondence: azlanismail@uitm.edu.my. Harith: m.harith.hadi@gmail.com.
+> Azlan Ismail, Muhamad Harith Hadi, Sofianita Mutalib, Mohd Suffian Sulaiman and Jafar AbuKhait. **High AUROC, Unreliable Thresholds: Uncertainty-Aware Threshold Calibration for Tuberculosis Chest-Radiograph Classifiers.** Submitted to *Computerized Medical Imaging and Graphics*.
 
-This repository contains experiment code, plotting resources and available saved evaluation evidence. It is not a clinical diagnostic system. The experiments assess agreement with public-dataset labels; clinical validity, patient independence and pretraining independence remain unestablished.
+Correspondence: azlanismail@uitm.edu.my.
 
-## Start here
+This is a research archive. It is not a clinical diagnostic system. The experiments measure agreement with public-dataset labels. Clinical validity, patient independence and pretraining independence are not established.
 
-- [Reproduction instructions](docs/REPRODUCTION.md) distinguish saved-score checks from GPU experiments.
-- [Archive completeness and release status](docs/RELEASE_STATUS.md) lists the material still needed for a complete experiment archive.
+## Study in brief
 
-## Scientific scope
+Classifiers built on frozen RAD-DINO features (one logistic regression and three seeded neural classifiers) were developed on a Shenzhen split: 529 training and 133 validation images, 69 of them TB-positive. The threshold reaching at least 90% validation sensitivity was transferred unchanged to two external cohorts:
 
-The exploratory study develops classifiers using one Shenzhen split (529 training and 133 validation images) and evaluates Montgomery (138 images) and a duplicate-screened TBX11K validation-derived cohort (1,794 images: 200 TB-labelled, 800 healthy and 794 other-illness images). Development-selected thresholds are transferred unchanged.
+- Montgomery: 138 images.
+- A duplicate-screened TBX11K cohort: 1,794 images (200 TB, 800 healthy and 794 other illness).
 
-The experiments examine discrimination and threshold transfer, specificity across negative groups, initial RAD-DINO/DINOv2/DenseNet121 pipeline comparisons, matched encoder–resolution conditions, and a post hoc DINOv2 preprocessing diagnostic. Later comparisons were designed after earlier external results were observed. They do not isolate a causal effect of medical pretraining or provide confirmatory clinical evidence.
+The article shows three things:
 
-## Verify saved results without a GPU
+1. **High AUROC did not guarantee a reliable operating point.** The validation-selected threshold was highly uncertain with 69 positives.
+2. **A calibration method is proposed and tested.** An uncertainty-aware threshold calibration (a Neyman–Pearson order-statistic rule) needs at least 29 local TB-positive images. It met the 90% sensitivity target in most repeated calibrations, at a stated referral cost.
+3. **Other-illness negatives drove the remaining over-referral.** Local thresholds did not remove it.
 
-Use Python 3.10 or later, from the repository root. These two scripts use only the Python standard library and do not download data or train models.
+## Reproduce the manuscript from saved scores (no GPU)
+
+```sh
+python -m pip install -r manuscript/requirements.txt
+python manuscript/reproduce.py
+```
+
+This regenerates Figures 1–5, Supplementary Figure S1, Tables 2–4, Supplementary Tables S4–S5, and the threshold-uncertainty and calibration analyses. It then checks that the outputs match the saved copies in `evidence/manuscript/`. See [manuscript/README.md](manuscript/README.md) for the script behind each figure and table.
+
+## Verify the packaged records
+
+These two checks use only the Python standard library:
 
 ```sh
 python scripts/verify_artifacts.py
 python scripts/reproduce_point_metrics.py
 ```
 
-The first checks packaged file hashes, source syntax and archived execution receipts. The second independently recalculates point estimates from available per-image scores for the initial classifiers and comparators. It does **not** recalculate bootstrap intervals or recover missing per-image outputs for the matched-resolution and preprocessing experiments.
-
-## Revision analyses from saved scores
-
-The threshold-selection uncertainty, local reference threshold, referral-rate, calibration and uncertainty-aware threshold analyses reported in the manuscript are computed only from the saved per-image scores, without a GPU. They need NumPy and Matplotlib:
-
-```sh
-python experiments/revision/analysis.py . OUT          # OUT/tier1_analysis.json (10,000 resamples, seed 20261106)
-python experiments/revision/figs.py . OUT/tier1_analysis.json OUT   # Figures 3, 5, S1 and fig3c_subgroups.json
-python experiments/revision/tables.py OUT/tier1_analysis.json OUT/fig3c_subgroups.json .   # LaTeX table rows
-python experiments/revision/fig_design.py OUT          # Figure 1 (study design)
-python experiments/revision/remedy.py . OUT            # OUT/remedy_analysis.json (uncertainty-aware threshold rule)
-python experiments/revision/remedy_outputs.py OUT/remedy_analysis.json . OUT   # Figure 4 and table rows
-```
-
-The outputs used in the manuscript are saved in `evidence/revision/`.
+- `verify_artifacts.py` checks packaged file hashes, source syntax and the archived execution receipts.
+- `reproduce_point_metrics.py` recalculates the point estimates from the saved per-image scores and compares them with the saved results.
 
 ## Repository map
 
-| Folder | Contents |
-|---|---|
-| `experiments/development/` | Corrected initial RAD-DINO study, preparation, training, evaluation and Colab notebooks |
-| `experiments/external/` | TBX11K source audit and external evaluation scripts |
-| `experiments/comparators/` | Initial DINOv2/DenseNet121 comparison and case-mix analysis |
-| `experiments/matched_resolution/` | Matched RAD-DINO/DINOv2 conditions and paired analysis |
-| `experiments/preprocessing/` | DINOv2 resize–crop diagnostic |
-| `experiments/revision/` | Threshold-uncertainty, calibration and figure scripts run on saved scores |
-| `evidence/` | Available manifests, scores, estimates, logs and completion receipts; `evidence/revision/` holds the revision analysis outputs |
-| `figures/` | Plotting code and saved figure data; no model fitting |
-| `scripts/` | Portable checks for this packaged archive |
-| `docs/` | Reproduction and completeness notes |
+| Folder | Contents | Manuscript |
+|---|---|---|
+| `manuscript/` | Scripts that regenerate every figure, table and secondary analysis from saved scores | All figures and Tables 2–4, S4–S5 |
+| `evidence/manuscript/` | Saved analysis outputs, table bodies and plotted estimates | As above |
+| `experiments/development/` | Shenzhen split, RAD-DINO feature extraction, classifier fitting and threshold selection (Colab) | Sections 3.1–3.5 |
+| `experiments/external/` | TBX11K duplicate screening, cohort lock and external evaluation | Sections 3.2–3.3 |
+| `experiments/matched_resolution/` | Matched RAD-DINO and DINOv2 comparison at 224 and 518 pixels | Supplementary S2 |
+| `experiments/comparators/` | Initial DINOv2 and DenseNet121 comparators and case-mix analysis | Supplementary S4 |
+| `experiments/preprocessing/` | DINOv2 resize–crop diagnostic | Supplementary S4 |
+| `evidence/` (other folders) | Manifests, per-image scores, estimates, logs and completion receipts for each experiment | — |
+| `validation/` | Recomputed point metrics | — |
+| `scripts/` | Portable integrity and point-metric checks | — |
+| `docs/` | Reproduction guide and archive status | — |
 
-Historical scripts retain their original Colab/Drive paths so that recorded execution hashes remain meaningful. They are not all standalone commands from this repository layout. Read the reproduction instructions before running them. Historical protocol status statements describe their date of creation; later completion receipts and saved results are under `evidence/`.
+The historical experiment scripts keep their original Colab and Drive paths so that their recorded execution hashes stay valid. Read [docs/REPRODUCTION.md](docs/REPRODUCTION.md) before re-running them.
 
-`SOURCE_MAP.csv` records each copied artifact's original project-relative location, original SHA-256, repository SHA-256 and any transformation. Some Windows Python files were normalized to LF; the two development scripts then match the recorded Colab execution hashes. Notebook outputs and execution counts were cleared. Evidence files were copied byte-for-byte. `ARTIFACTS.sha256` covers the packaged source and evidence.
+`SOURCE_MAP.csv` records where each copied artifact came from, with its SHA-256 and any transformation. `ARTIFACTS.sha256` covers all packaged code and records.
 
-Raw radiographs, dataset ZIPs, trained model binaries and credentials are not included. The related PulmoVision FYP application is a separate project: <https://github.com/HarithHadi/PulmoVision>.
+Raw radiographs, dataset archives, trained model binaries and credentials are not included. Obtain the images from the Shenzhen and Montgomery collections (NLM Open-i) and from TBX11K (<https://github.com/yun-liu/Tuberculosis>). The related PulmoVision application is a separate project: <https://github.com/HarithHadi/PulmoVision>.
 
 ## Licence and citation
 
-Code is released under the [MIT licence](LICENSE) and derived evaluation records under [CC BY 4.0](LICENSE-DATA.md); see [NOTICE.md](NOTICE.md). Releases are archived on Zenodo. Please cite the archive using [CITATION.cff](CITATION.cff).
+Code is released under the [MIT licence](LICENSE) and derived evaluation records under [CC BY 4.0](LICENSE-DATA.md); see [NOTICE.md](NOTICE.md). An archived release with a DOI will be deposited on Zenodo when the article is accepted. Until then, please cite the repository using [CITATION.cff](CITATION.cff).

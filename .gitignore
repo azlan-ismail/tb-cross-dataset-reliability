@@ -12,7 +12,7 @@ venv/
 /downloads/
 /runs/
 /verification-output/
-/figures/figures/
+/manuscript-output/
 *.zip
 *.pt
 *.pth

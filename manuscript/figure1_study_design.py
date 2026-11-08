@@ -86,7 +86,7 @@ items = [('A  Operating point', 'AUROC, sensitivity\nand specificity at the\ntra
          ('D  Calibration', 'Brier score, ECE,\ncalibration slope')]
 for i, (t, b) in enumerate(items):
     box(1.5 + i * (W + G), 9.5, W, 13, t, b, fc=GRN_F, ec=GRN_E, tsize=8.6, bsize=8.2)
-header(1.5, 4.3, '5  Proposed remedy')
+header(1.5, 4.3, '5  Proposed method')
 box(1.5, -11.6, 97.0, 15.0, 'E  Uncertainty-aware threshold calibration',
     'replaces the conventional threshold rule of step 2\n'
     'threshold = order statistic of n $\\geq$ 29 confirmed TB images giving $\\geq$90% sensitivity with 95% confidence\n'

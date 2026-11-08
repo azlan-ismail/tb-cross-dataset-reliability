@@ -1,4 +1,9 @@
-"""Tier-1 descriptive analyses from saved per-image scores (no model fitting)."""
+"""Threshold-selection uncertainty, local reference thresholds, referral rate and calibration.
+
+Usage: python manuscript/threshold_uncertainty.py REPO OUT
+Writes OUT/threshold_uncertainty.json from saved per-image scores (no model fitting).
+10,000 class-stratified bootstrap resamples, seed 20261106.
+"""
 import csv, json, math, sys
 import numpy as np
 R, OUT = sys.argv[1], sys.argv[2]
@@ -111,7 +116,7 @@ for m, d in data.items():
         o['ece_ci'] = ci(bs[f'{c}_ece']); o['cal_slope_ci'] = ci(bs[f'{c}_slope'])
         o['positive_rate_ci'] = ci(bs[f'{c}_posrate']); o['spec_at_cohort_t90_ci'] = ci(bs[f'{c}_spec_t90'])
     res['models'][m] = out
-json.dump(res, open(f'{OUT}/tier1_analysis.json', 'w'), indent=1)
+json.dump(res, open(f'{OUT}/threshold_uncertainty.json', 'w'), indent=1)
 for m, o in res['models'].items():
     print(f"\n== {m}: val t={o['validation_threshold']:.3f} CI {o['val']['threshold_ci'][0]:.3f}-{o['val']['threshold_ci'][1]:.3f}; val ECE {o['val']['ece']:.3f} slope {o['val']['cal_slope']:.2f}")
     for c in ['montgomery', 'tbx11k']:

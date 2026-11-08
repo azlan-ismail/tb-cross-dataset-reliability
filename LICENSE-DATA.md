@@ -5,11 +5,11 @@ The derived evaluation records in this repository are licensed under the
 
 This covers the records produced by the authors, including:
 
-- `evidence/` (manifests, per-image scores, estimates, logs and completion receipts);
-- `validation/` and `figures/data/` (recomputed metrics and figure data);
+- `evidence/` (manifests, per-image scores, estimates, logs and completion receipts, and the manuscript analysis outputs in `evidence/manuscript/`);
+- `validation/` (recomputed point metrics);
 - `SOURCE_MAP.csv` and `ARTIFACTS.sha256`.
 
-Source code (`experiments/`, `scripts/` and the plotting code in `figures/`)
+Source code (`experiments/`, `manuscript/` and `scripts/`)
 is licensed under the MIT licence in [LICENSE](LICENSE).
 
 Image identifiers and labels originate from the Shenzhen, Montgomery and
