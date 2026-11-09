@@ -10,8 +10,8 @@ GREY_F, GREY_E = '#f1f2f4', '#8a8f98'
 BLUE_F, BLUE_E = '#e6f0f8', '#0072B2'
 ORNG_F, ORNG_E = '#fbece3', '#D55E00'
 GRN_F, GRN_E = '#e5f4ef', '#009E73'
-fig = plt.figure(figsize=(7.6, 8.45))
-ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(-20.5, 91); ax.axis('off')
+fig = plt.figure(figsize=(7.6, 7.84))
+ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(-12.5, 91); ax.axis('off')
 
 def box(x, y, w, h, title, body='', fc=GREY_F, ec=GREY_E, ls='-', tsize=9.6, bsize=8.6):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle='round,pad=0,rounding_size=1.2',
@@ -92,7 +92,4 @@ box(1.5, -11.6, 97.0, 15.0, 'E  Uncertainty-aware threshold calibration',
     'threshold = order statistic of n $\\geq$ 29 confirmed TB images giving $\\geq$90% sensitivity with 95% confidence\n'
     'evaluated against the conventional rule: development-only transfer and local calibration on each external cohort',
     fc=BLUE_F, ec=BLUE_E, tsize=9.2, bsize=8.3)
-box(1.5, -19.6, 97.0, 6.0,
-    'Secondary (Supplementary S2): RAD-DINO vs DINOv2 at 224 and 518 pixels, matched preprocessing',
-    fc='white', ec=GREY_E, ls=(0, (4, 2.5)), tsize=8.6)
 fig.savefig(OUT / 'Fig1.pdf'); fig.savefig(OUT / 'Fig1.png', dpi=200)
