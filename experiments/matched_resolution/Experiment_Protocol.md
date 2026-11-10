@@ -35,7 +35,7 @@ This extension was chosen after earlier external results were observed and is ex
 
 ## Execution
 
-Open the existing notebook: https://colab.research.google.com/drive/1nNJ8Q0ep60gl2I7QVmH8GgbtSj3miGdm
+Open the existing Colab notebook (not included in this archive; `run_matched_resolution.py` contains the experiment code).
 
 Run its setup cell, complete the Google Drive connection, and run the final cell beginning “Matched-resolution experiment.” Do not run all cells: earlier experiments have already completed.
 
