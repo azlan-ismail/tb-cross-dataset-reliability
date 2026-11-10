@@ -39,4 +39,4 @@ Cross-source candidates are the union of exact matches, dHash distance ≤4, pHa
 
 No weights, thresholds or model choices change during this audit. No clinical reviewer is available, so any image comparison is limited to duplicate-content assessment and must not be described as clinical adjudication. Foundation-model image exposure remains a separate unresolved question.
 
-[Saved audit evidence in Drive](https://drive.google.com/drive/folders/1DaJMXzBzhoEBC1DJhgS83vvW_aUIOxgD)
+Saved audit evidence: `evidence/tbx11k_audit/`.
